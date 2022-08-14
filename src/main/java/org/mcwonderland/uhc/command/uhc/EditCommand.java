@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.menu.MainGui;
 import org.mineacademy.fo.command.SimpleSubCommand;
 
@@ -12,6 +13,7 @@ public class EditCommand extends SimpleSubCommand {
         super(parent, subLabel);
 
         setDescription("開啟設定介面。");
+        setPermission(UHCPermission.COMMAND_UHC_EDIT.toString());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.host;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.api.enums.RoleName;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.CombatRelog;
@@ -24,6 +25,7 @@ public class GiveAllCommand extends SimpleCommand {
         setMinArguments(2);
         setUsage("<物品類型> <數量>");
         setDescription("給予所有場上的玩家指令數量的物品");
+        setPermission(UHCPermission.COMMAND_GIVEALL.toString());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.settings.CacheSaver;
 import org.mcwonderland.uhc.game.settings.LoadingStatus;
 import org.mcwonderland.uhc.menu.impl.host.CenterCleanerMenu;
@@ -16,6 +17,7 @@ public class RegenWorldCommand extends SimpleSubCommand {
 
         setDescription("重載遊戲世界.");
         setUsage("{seed}");
+        setPermission(UHCPermission.COMMAND_UHC_REGEN.toString());
     }
 
     @Override

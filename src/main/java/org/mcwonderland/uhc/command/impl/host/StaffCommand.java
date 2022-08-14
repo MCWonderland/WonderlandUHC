@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.host;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.api.enums.RoleName;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.util.GameUtils;
@@ -16,6 +17,7 @@ public class StaffCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("切換管理員模式。");
+        setPermission(UHCPermission.COMMAND_STAFF.toString());
     }
 
     @Override

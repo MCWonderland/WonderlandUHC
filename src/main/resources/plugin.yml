@@ -27,7 +27,10 @@ permissions:
       wonderland.uhc.command.uhc.sethost: true
       wonderland.uhc.command.uhc.stop: true
       wonderland.uhc.command.uhc.tp: true
+      wonderland.uhc.command.uhc.regen: true
+      wonderland.uhc.command.uhc.start: true
       wonderland.uhc.command.whitelist: true
+      wonderland.uhc.command.setspawn: true
       wonderland.uhc.host.seebackpack: true
       wonderland.uhc.host.practiceother: true
 
@@ -37,6 +40,7 @@ permissions:
       wonderland.uhc.bypass.join.started: true
       wonderland.uhc.bypass.join.whitelist: true
       wonderland.uhc.command.staff: true
+      wonderland.uhc.command.giveall: true
       wonderland.uhc.seespectatorchat: true
 
   wonderland.uhc.bypass.kick.death:

@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
@@ -14,6 +15,7 @@ class KickCommand extends TeamOwnerCommand {
         setMinArguments(1);
         setUsage("<玩家>");
         setDescription("將指定玩家從隊伍中剔除。");
+        setPermission(UHCPermission.COMMAND_TEAM_KICK.toString());
     }
 
     @Override

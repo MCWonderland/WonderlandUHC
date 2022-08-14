@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.info;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.menu.impl.game.StatsMenu;
 import org.bukkit.entity.Player;
 import org.mineacademy.fo.command.SimpleCommand;
@@ -15,6 +16,7 @@ public class StatsCommand extends SimpleCommand {
         setMinArguments(0);
         setUsage("[玩家]");
         setDescription("查看玩家數據。");
+        setPermission(UHCPermission.COMMAND_STATS.toString());
     }
 
     @Override

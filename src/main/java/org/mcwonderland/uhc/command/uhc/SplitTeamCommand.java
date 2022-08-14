@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.util.TeamModifier;
 import org.mineacademy.fo.command.SimpleSubCommand;
 
@@ -12,6 +13,7 @@ public class SplitTeamCommand extends SimpleSubCommand {
 
         setUsage("[是否要先解散所有隊伍(true/false)]");
         setDescription("對玩家進行分隊。");
+        setPermission(UHCPermission.COMMAND_UHC_SPLITTEAM.toString());
     }
 
     @Override

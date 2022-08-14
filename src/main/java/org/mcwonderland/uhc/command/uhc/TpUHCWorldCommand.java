@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.settings.Messages;
 import org.mcwonderland.uhc.util.UHCWorldUtils;
 import org.bukkit.GameMode;
@@ -16,6 +17,7 @@ public class TpUHCWorldCommand extends SimpleSubCommand {
         super(parent, subLabel);
 
         setDescription("傳送至UHC世界。");
+        setPermission(UHCPermission.COMMAND_UHC_TP.toString());
     }
 
     @Override

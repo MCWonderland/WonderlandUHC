@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.host;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.settings.Sounds;
 import org.mcwonderland.uhc.util.Extra;
 import org.bukkit.Location;
@@ -17,6 +18,7 @@ public class MLGCommand extends SimpleCommand {
         setMinArguments(1);
         setUsage("<玩家>");
         setDescription("將玩家傳送到你的位置，開始MLG挑戰。");
+        setPermission(UHCPermission.COMMAND_MLG.toString());
     }
 
     @Override

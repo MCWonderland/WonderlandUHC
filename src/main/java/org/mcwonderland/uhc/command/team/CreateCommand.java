@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.settings.CommandSettings;
 import org.mcwonderland.uhc.settings.Sounds;
@@ -12,6 +13,7 @@ class CreateCommand extends TeamSubCommand {
         super(parent, sublabel);
 
         setDescription("創建隊伍。");
+        setPermission(UHCPermission.COMMAND_TEAM_CREATE.toString());
     }
 
     @Override

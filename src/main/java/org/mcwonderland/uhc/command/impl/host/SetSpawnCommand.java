@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.host;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.settings.CommandSettings;
 import org.mcwonderland.uhc.settings.Sounds;
 import org.mcwonderland.uhc.settings.spawn.Spawns;
@@ -17,6 +18,7 @@ public class SetSpawnCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("設定大廳重生點。");
+        setPermission(UHCPermission.COMMAND_SET_SPAWN.toString());
     }
 
     @Override

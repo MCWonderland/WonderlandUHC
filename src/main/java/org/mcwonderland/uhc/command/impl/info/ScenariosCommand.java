@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.info;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.WonderlandUHC;
 import org.mcwonderland.uhc.menu.impl.game.EnabledScenariosMenu;
 import org.mineacademy.fo.command.SimpleCommand;
@@ -16,6 +17,7 @@ public class ScenariosCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("查看本場使用的特殊模式。");
+        setPermission(UHCPermission.COMMAND_SCENARIOS.toString());
     }
 
     @Override

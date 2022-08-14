@@ -1,8 +1,9 @@
 package org.mcwonderland.uhc.command.impl.info;
 
+import org.bukkit.entity.Player;
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.settings.CommandSettings;
 import org.mcwonderland.uhc.util.Extra;
-import org.bukkit.entity.Player;
 import org.mineacademy.fo.command.SimpleCommand;
 
 /**
@@ -16,6 +17,7 @@ public class ViewHealCommand extends SimpleCommand {
         setMinArguments(1);
         setUsage("<玩家>");
         setDescription("查看玩家血量。");
+        setPermission(UHCPermission.COMMAND_VIEWHEAL.toString());
     }
 
     @Override

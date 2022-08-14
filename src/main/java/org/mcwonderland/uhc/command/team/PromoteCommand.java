@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
@@ -10,6 +11,7 @@ class PromoteCommand extends TeamOwnerCommand {
         super(parent, sublabel);
 
         setDescription("將指定玩家升格為隊長。");
+        setPermission(UHCPermission.COMMAND_TEAM_PROMOTE.toString());
     }
 
     @Override

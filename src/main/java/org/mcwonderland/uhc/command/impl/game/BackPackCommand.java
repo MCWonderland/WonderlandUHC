@@ -16,6 +16,7 @@ public class BackPackCommand extends SimpleCommand {
     public BackPackCommand(String label) {
         super(label);
 
+        setPermission(null);
         setMinArguments(0);
         setUsage("[玩家]");
     }

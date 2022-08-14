@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.model.tutorial.UHCConfigTutorial;
 import org.mcwonderland.uhc.model.tutorial.UHCHostTutorial;
 import org.mcwonderland.uhc.model.tutorial.model.Tutorial;
@@ -15,6 +16,7 @@ public class TutorialCommand extends SimpleSubCommand {
         setUsage("<config|host>");
         setMinArguments(1);
         setDescription("學習如何主持與設定UHC。");
+        setPermission(UHCPermission.COMMAND_UHC_TUTORIAL.toString());
     }
 
     @Override

@@ -1,6 +1,7 @@
 package org.mcwonderland.uhc.command.impl.host;
 
 import me.lulu.datounms.DaTouNMS;
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.api.event.player.UHCPlayerRespawnedEvent;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.Game;
@@ -33,6 +34,7 @@ public class RespawnCommand extends SimpleCommand {
         setMinArguments(1);
         setUsage("<玩家>");
         setDescription("復活玩家。");
+        setPermission(UHCPermission.COMMAND_RESPAWN.toString());
     }
 
     @Override
