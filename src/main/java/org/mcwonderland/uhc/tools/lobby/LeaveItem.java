@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.mcwonderland.uhc.tools.UHCTool;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class LeaveItem extends UHCTool {
+public final class LeaveItem extends UHCTool {
 
     @Getter
     private static final LeaveItem instance = new LeaveItem();

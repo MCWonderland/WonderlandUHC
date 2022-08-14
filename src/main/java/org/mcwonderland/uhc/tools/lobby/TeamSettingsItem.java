@@ -4,7 +4,7 @@ import lombok.Getter;
 import org.mcwonderland.uhc.tools.UHCTool;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class TeamSettingsItem extends UHCTool {
+public final class TeamSettingsItem extends UHCTool {
 
     @Getter
     private static final TeamSettingsItem instance = new TeamSettingsItem();

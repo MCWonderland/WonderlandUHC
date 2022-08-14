@@ -7,7 +7,7 @@ import org.mcwonderland.uhc.tools.UHCTool;
 import org.mcwonderland.uhc.util.UHCWorldUtils;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class NetherPlayersItem extends UHCTool {
+public final class NetherPlayersItem extends UHCTool {
 
     @Getter
     private static final NetherPlayersItem instance = new NetherPlayersItem();

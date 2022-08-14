@@ -13,7 +13,7 @@ import org.mineacademy.fo.RandomUtil;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
-public class RandomTeleportItem extends UHCTool {
+public final class RandomTeleportItem extends UHCTool {
 
     @Getter
     private static final RandomTeleportItem instance = new RandomTeleportItem();

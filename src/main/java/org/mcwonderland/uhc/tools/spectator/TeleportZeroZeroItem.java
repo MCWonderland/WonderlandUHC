@@ -6,7 +6,7 @@ import org.mcwonderland.uhc.util.UHCWorldUtils;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class TeleportZeroZeroItem extends UHCTool {
+public final class TeleportZeroZeroItem extends UHCTool {
 
     @Getter
     private static final TeleportZeroZeroItem instance = new TeleportZeroZeroItem();

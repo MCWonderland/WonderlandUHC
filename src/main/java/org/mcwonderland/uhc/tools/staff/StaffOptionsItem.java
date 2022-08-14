@@ -5,7 +5,7 @@ import org.mcwonderland.uhc.menu.MainGui;
 import org.mcwonderland.uhc.tools.UHCTool;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class StaffOptionsItem extends UHCTool {
+public final class StaffOptionsItem extends UHCTool {
 
     @Getter
     private static final StaffOptionsItem instance = new StaffOptionsItem();

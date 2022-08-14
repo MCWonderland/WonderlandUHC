@@ -7,7 +7,7 @@ import org.mcwonderland.uhc.tools.UHCTool;
 import org.mcwonderland.uhc.util.UHCWorldUtils;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class OverworldPlayersItem extends UHCTool {
+public final class OverworldPlayersItem extends UHCTool {
 
     @Getter
     private static final OverworldPlayersItem instance = new OverworldPlayersItem();

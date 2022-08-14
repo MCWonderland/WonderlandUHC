@@ -11,7 +11,7 @@ import org.mcwonderland.uhc.util.Chat;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerInteractEvent;
 
-public class TeamsItem extends UHCTool {
+public final class TeamsItem extends UHCTool {
 
     @Getter
     private static final TeamsItem instance = new TeamsItem();
