@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.info;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.model.GamePlaceholderReplacer;
 import org.mcwonderland.uhc.settings.CommandSettings;
 import org.mineacademy.fo.command.SimpleCommand;
@@ -14,6 +15,7 @@ public class ConfigCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("查看遊戲相關設定。");
+        setPermission(UHCPermission.COMMAND_CONFIG.toString());
     }
 
     @Override

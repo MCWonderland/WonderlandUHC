@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.util.Extra;
 import org.mineacademy.fo.command.SimpleCommand;
 
@@ -13,6 +14,7 @@ public class LeaveCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("離開伺服器。");
+        setPermission(UHCPermission.COMMAND_LEAVE.toString());
     }
 
     @Override

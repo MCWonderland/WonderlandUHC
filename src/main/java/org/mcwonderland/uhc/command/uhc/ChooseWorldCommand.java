@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.settings.CacheSaver;
 import org.mcwonderland.uhc.game.settings.LoadingStatus;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -21,6 +22,7 @@ public class ChooseWorldCommand extends SimpleSubCommand {
 
         setMinArguments(0);
         setDescription("選擇此遊戲世界並開始載入地圖。");
+        setPermission(UHCPermission.COMMAND_UHC_CHOOSE.toString());
     }
 
     @Override

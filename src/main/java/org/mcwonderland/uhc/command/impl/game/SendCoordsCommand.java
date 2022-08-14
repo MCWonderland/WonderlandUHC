@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.game;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -18,6 +19,7 @@ public class SendCoordsCommand extends SimpleCommand {
     public SendCoordsCommand(String label) {
         super(label);
 
+        setPermission(UHCPermission.COMMAND_SENDCOORDS.toString());
         setMinArguments(0);
         setDescription("向隊友發送座標。");
     }

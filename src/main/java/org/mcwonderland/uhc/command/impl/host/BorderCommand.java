@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.host;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.Game;
 import org.mcwonderland.uhc.game.GameTimerRunnable;
@@ -21,6 +22,7 @@ public class BorderCommand extends SimpleCommand {
         setMinArguments(1);
         setUsage("<大小>");
         setDescription("強制收縮邊界。");
+        setPermission(UHCPermission.COMMAND_BORDER.toString());
     }
 
     @Override

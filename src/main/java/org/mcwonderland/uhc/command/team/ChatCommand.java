@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -16,6 +17,7 @@ class ChatCommand extends TeamSubCommand {
 
         setUsage("[訊息]");
         setDescription("發對隊伍聊天訊息。");
+        setPermission(UHCPermission.COMMAND_TEAM_CHAT.toString());
     }
 
     @Override

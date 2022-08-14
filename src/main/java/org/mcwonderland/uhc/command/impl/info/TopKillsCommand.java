@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.info;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.game.player.UHCPlayers;
@@ -21,6 +22,7 @@ public class TopKillsCommand extends SimpleCommand {
 
         setMinArguments(0);
         setDescription("查看擊殺數排行榜。");
+        setPermission(UHCPermission.COMMAND_TOPKILLS.toString());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -14,6 +15,7 @@ class ListCommand extends TeamSubCommand {
 
         setUsage("[玩家]");
         setDescription("查看該玩家所處隊伍的資訊。");
+        setPermission(UHCPermission.COMMAND_TEAM_LIST.toString());
     }
 
     @Override

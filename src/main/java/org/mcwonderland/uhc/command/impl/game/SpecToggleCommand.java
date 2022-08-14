@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.impl.game;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.SpectateMode;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -17,6 +18,8 @@ public class SpecToggleCommand extends SimpleCommand {
 
     public SpecToggleCommand(String label) {
         super(label);
+
+        setPermission(UHCPermission.COMMAND_SPECTOGGLE.toString());
     }
 
     @Override

@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.team;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
@@ -17,6 +18,7 @@ class InviteCommand extends TeamOwnerCommand {
         setMinArguments(1);
         setUsage("<玩家>");
         setDescription("邀請其他人加入你的隊伍。");
+        setPermission(UHCPermission.COMMAND_TEAM_INVITE.toString());
     }
 
     @Override

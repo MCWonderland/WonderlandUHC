@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.uhc;
 
+import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.util.Chat;
 import org.mineacademy.fo.command.SimpleSubCommand;
 import org.mineacademy.fo.plugin.SimplePlugin;
@@ -11,6 +12,7 @@ public class ReloadCommand extends SimpleSubCommand {
         super(parent, label);
 
         setDescription("重載插件。");
+        setPermission(UHCPermission.COMMAND_UHC_RELOAD.toString());
     }
 
     @Override
