@@ -13,6 +13,7 @@ compileJava {
 
 shadowJar {
     relocate("org.mineacademy", "org.mcwonderland.uhc.lib")
+    classifier = ""
 }
 
 repositories {

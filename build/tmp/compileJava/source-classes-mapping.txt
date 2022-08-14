@@ -115,14 +115,14 @@ org/mcwonderland/uhc/settings/Sounds.java
  org.mcwonderland.uhc.settings.Sounds$Tutorial
 org/mcwonderland/uhc/api/object/UHCTeam.java
  org.mcwonderland.uhc.api.object.UHCTeam
-org/mcwonderland/uhc/game/border/MovingBorder.java
- org.mcwonderland.uhc.game.border.MovingBorder
+org/mcwonderland/uhc/tools/lobby/LeaveItem.java
+ org.mcwonderland.uhc.tools.lobby.LeaveItem
 org/mcwonderland/uhc/model/deathmsg/DeathMessageHandler.java
  org.mcwonderland.uhc.model.deathmsg.DeathMessageHandler
 org/mcwonderland/uhc/command/uhc/ResetTeamCommand.java
  org.mcwonderland.uhc.command.uhc.ResetTeamCommand
-org/mcwonderland/uhc/game/state/starting/TeleportingState.java
- org.mcwonderland.uhc.game.state.starting.TeleportingState
+org/mcwonderland/uhc/tools/spectator/NetherPlayersItem.java
+ org.mcwonderland.uhc.tools.spectator.NetherPlayersItem
 org/mcwonderland/uhc/UHCPermission.java
  org.mcwonderland.uhc.UHCPermission
 org/mcwonderland/uhc/model/broadcast/AbstractBroadcastSender.java
@@ -141,16 +141,16 @@ org/mcwonderland/uhc/game/timer/Timers.java
  org.mcwonderland.uhc.game.timer.Timers
 org/mcwonderland/uhc/game/timer/impl/RelogExpireChecker.java
  org.mcwonderland.uhc.game.timer.impl.RelogExpireChecker
-org/mcwonderland/uhc/api/event/team/TeamCreatedEvent.java
- org.mcwonderland.uhc.api.event.team.TeamCreatedEvent
+org/mcwonderland/uhc/tools/lobby/TeamsItem.java
+ org.mcwonderland.uhc.tools.lobby.TeamsItem
 org/mcwonderland/uhc/command/uhc/StopCommand.java
  org.mcwonderland.uhc.command.uhc.StopCommand
 org/mcwonderland/uhc/command/impl/game/SendCoordsCommand.java
  org.mcwonderland.uhc.command.impl.game.SendCoordsCommand
 org/mcwonderland/uhc/command/team/InviteCommand.java
  org.mcwonderland.uhc.command.team.InviteCommand
-org/mcwonderland/uhc/game/timer/impl/countdown/FinalHealCountdown.java
- org.mcwonderland.uhc.game.timer.impl.countdown.FinalHealCountdown
+org/mcwonderland/uhc/tools/spectator/TeleportZeroZeroItem.java
+ org.mcwonderland.uhc.tools.spectator.TeleportZeroZeroItem
 org/mcwonderland/uhc/game/state/playing/listener/BlockListener.java
  org.mcwonderland.uhc.game.state.playing.listener.BlockListener
 org/mcwonderland/uhc/game/player/role/models/RoleBoard.java
@@ -263,8 +263,8 @@ org/mcwonderland/uhc/game/player/DeathPlayer.java
  org.mcwonderland.uhc.game.player.DeathPlayer
 org/mcwonderland/uhc/game/state/preparing/PreparingState.java
  org.mcwonderland.uhc.game.state.preparing.PreparingState
-org/mcwonderland/uhc/hook/voice/DiscordVoiceHook.java
- org.mcwonderland.uhc.hook.voice.DiscordVoiceHook
+org/mcwonderland/uhc/tools/lobby/SettingsBook.java
+ org.mcwonderland.uhc.tools.lobby.SettingsBook
 org/mcwonderland/uhc/command/impl/info/StatsCommand.java
  org.mcwonderland.uhc.command.impl.info.StatsCommand
 org/mcwonderland/uhc/game/player/role/spectator/RoleSpectatorEvents.java
@@ -300,8 +300,8 @@ org/mcwonderland/uhc/command/impl/host/whitelist/ListCommand.java
  org.mcwonderland.uhc.command.impl.host.whitelist.ListCommand
 org/mcwonderland/uhc/api/game/UHCGameSettings.java
  org.mcwonderland.uhc.api.game.UHCGameSettings
-org/mcwonderland/uhc/game/state/share/join/DefaultJoinMessage.java
- org.mcwonderland.uhc.game.state.share.join.DefaultJoinMessage
+org/mcwonderland/uhc/tools/Hotbars.java
+ org.mcwonderland.uhc.tools.Hotbars
 org/mcwonderland/uhc/util/Extra.java
  org.mcwonderland.uhc.util.Extra
 org/mcwonderland/uhc/api/event/timer/UHCTimerEvent.java
@@ -404,13 +404,8 @@ org/mcwonderland/uhc/game/player/UHCPlayers.java
  org.mcwonderland.uhc.game.player.UHCPlayers
 org/mcwonderland/uhc/listener/BooleanEvents.java
  org.mcwonderland.uhc.listener.BooleanEvents
-org/mcwonderland/uhc/menu/impl/game/staff/StaffOptionsMenu.java
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$1
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$2
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$3
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$OreAlertButton
- org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$ToggleShowButton
+org/mcwonderland/uhc/tools/spectator/ToggleGameModeItem.java
+ org.mcwonderland.uhc.tools.spectator.ToggleGameModeItem
 org/mcwonderland/uhc/game/player/staff/StaffOptions.java
  org.mcwonderland.uhc.game.player.staff.StaffOptions
 org/mcwonderland/uhc/util/cuboid/SelectMode.java
@@ -496,8 +491,8 @@ org/mcwonderland/uhc/util/UniqueQueue.java
  org.mcwonderland.uhc.util.UniqueQueue
 org/mcwonderland/uhc/listener/DamageListener.java
  org.mcwonderland.uhc.listener.DamageListener
-org/mcwonderland/uhc/game/state/starting/StartingLoginListener.java
- org.mcwonderland.uhc.game.state.starting.StartingLoginListener
+org/mcwonderland/uhc/tools/spectator/OverworldPlayersItem.java
+ org.mcwonderland.uhc.tools.spectator.OverworldPlayersItem
 org/mcwonderland/uhc/command/uhc/ReloadCommand.java
  org.mcwonderland.uhc.command.uhc.ReloadCommand
 org/mcwonderland/uhc/command/team/PublicCommand.java
@@ -587,8 +582,8 @@ org/mcwonderland/uhc/scenario/impl/special/ScenarioLimitations.java
  org.mcwonderland.uhc.scenario.impl.special.ScenarioLimitations
  org.mcwonderland.uhc.scenario.impl.special.ScenarioLimitations$1
  org.mcwonderland.uhc.scenario.impl.special.ScenarioLimitations$OreMined
-org/mcwonderland/uhc/Dependency.java
- org.mcwonderland.uhc.Dependency
+org/mcwonderland/uhc/tools/spectator/RandomTeleportItem.java
+ org.mcwonderland.uhc.tools.spectator.RandomTeleportItem
 org/mcwonderland/uhc/scenario/impl/special/ScenarioFragileRods.java
  org.mcwonderland.uhc.scenario.impl.special.ScenarioFragileRods
 org/mcwonderland/uhc/settings/Messages.java
@@ -642,8 +637,8 @@ org/mcwonderland/uhc/command/uhc/ChooseWorldCommand.java
  org.mcwonderland.uhc.command.uhc.ChooseWorldCommand
 org/mcwonderland/uhc/game/state/playing/listener/GoldenHeadListener.java
  org.mcwonderland.uhc.game.state.playing.listener.GoldenHeadListener
-org/mcwonderland/uhc/game/state/playing/listener/IPvPListener.java
- org.mcwonderland.uhc.game.state.playing.listener.IPvPListener
+org/mcwonderland/uhc/tools/lobby/TeamSettingsItem.java
+ org.mcwonderland.uhc.tools.lobby.TeamSettingsItem
 org/mcwonderland/uhc/command/uhc/UHCMainCommandGroup.java
  org.mcwonderland.uhc.command.uhc.UHCMainCommandGroup
 org/mcwonderland/uhc/api/event/GameChangeSettingsEvent.java
@@ -688,8 +683,8 @@ org/mcwonderland/uhc/util/TeamModifier.java
  org.mcwonderland.uhc.util.TeamModifier
 org/mcwonderland/uhc/scenario/impl/damage/ScenarioDamageDogers.java
  org.mcwonderland.uhc.scenario.impl.damage.ScenarioDamageDogers
-org/mcwonderland/uhc/api/event/timer/DamageEnableEvent.java
- org.mcwonderland.uhc.api.event.timer.DamageEnableEvent
+org/mcwonderland/uhc/command/TestCommand.java
+ org.mcwonderland.uhc.command.TestCommand
 org/mcwonderland/uhc/settings/CommandSettings.java
  org.mcwonderland.uhc.settings.CommandSettings
  org.mcwonderland.uhc.settings.CommandSettings$Border
@@ -929,8 +924,8 @@ org/mcwonderland/uhc/model/tutorial/UHCConfigTutorial.java
  org.mcwonderland.uhc.model.tutorial.UHCConfigTutorial$Intro
  org.mcwonderland.uhc.model.tutorial.UHCConfigTutorial$PrepareForNextOne
  org.mcwonderland.uhc.model.tutorial.UHCConfigTutorial$TemplateTutorialSection
-org/mcwonderland/uhc/game/timer/impl/ScatterHandler.java
- org.mcwonderland.uhc.game.timer.impl.ScatterHandler
+org/mcwonderland/uhc/tools/staff/StaffOptionsItem.java
+ org.mcwonderland.uhc.tools.staff.StaffOptionsItem
 org/mcwonderland/uhc/scenario/impl/disable/ScenarioHorseLess.java
  org.mcwonderland.uhc.scenario.impl.disable.ScenarioHorseLess
 org/mcwonderland/uhc/game/settings/LoadingStatus.java
@@ -969,27 +964,32 @@ org/mcwonderland/uhc/game/state/playing/listener/StatsListener.java
  org.mcwonderland.uhc.game.state.playing.listener.StatsListener$StaffAlert
 org/mcwonderland/uhc/game/player/role/models/EmptyEventHandler.java
  org.mcwonderland.uhc.game.player.role.models.EmptyEventHandler
-org/mcwonderland/uhc/tools/Hotbars.java
- org.mcwonderland.uhc.tools.Hotbars
-org/mcwonderland/uhc/tools/lobby/SettingsBook.java
- org.mcwonderland.uhc.tools.lobby.SettingsBook
-org/mcwonderland/uhc/tools/spectator/TeleportZeroZeroItem.java
- org.mcwonderland.uhc.tools.spectator.TeleportZeroZeroItem
-org/mcwonderland/uhc/command/TestCommand.java
- org.mcwonderland.uhc.command.TestCommand
-org/mcwonderland/uhc/tools/lobby/TeamsItem.java
- org.mcwonderland.uhc.tools.lobby.TeamsItem
-org/mcwonderland/uhc/tools/lobby/TeamSettingsItem.java
- org.mcwonderland.uhc.tools.lobby.TeamSettingsItem
-org/mcwonderland/uhc/tools/spectator/RandomTeleportItem.java
- org.mcwonderland.uhc.tools.spectator.RandomTeleportItem
-org/mcwonderland/uhc/tools/spectator/NetherPlayersItem.java
- org.mcwonderland.uhc.tools.spectator.NetherPlayersItem
-org/mcwonderland/uhc/tools/spectator/OverworldPlayersItem.java
- org.mcwonderland.uhc.tools.spectator.OverworldPlayersItem
-org/mcwonderland/uhc/tools/spectator/ToggleGameModeItem.java
- org.mcwonderland.uhc.tools.spectator.ToggleGameModeItem
-org/mcwonderland/uhc/tools/staff/StaffOptionsItem.java
- org.mcwonderland.uhc.tools.staff.StaffOptionsItem
-org/mcwonderland/uhc/tools/lobby/LeaveItem.java
- org.mcwonderland.uhc.tools.lobby.LeaveItem
+org/mcwonderland/uhc/game/border/MovingBorder.java
+ org.mcwonderland.uhc.game.border.MovingBorder
+org/mcwonderland/uhc/game/timer/impl/ScatterHandler.java
+ org.mcwonderland.uhc.game.timer.impl.ScatterHandler
+org/mcwonderland/uhc/menu/impl/game/staff/StaffOptionsMenu.java
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$1
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$2
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$3
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$OreAlertButton
+ org.mcwonderland.uhc.menu.impl.game.staff.StaffOptionsMenu$ToggleShowButton
+org/mcwonderland/uhc/game/state/starting/StartingLoginListener.java
+ org.mcwonderland.uhc.game.state.starting.StartingLoginListener
+org/mcwonderland/uhc/game/state/starting/TeleportingState.java
+ org.mcwonderland.uhc.game.state.starting.TeleportingState
+org/mcwonderland/uhc/Dependency.java
+ org.mcwonderland.uhc.Dependency
+org/mcwonderland/uhc/game/state/playing/listener/IPvPListener.java
+ org.mcwonderland.uhc.game.state.playing.listener.IPvPListener
+org/mcwonderland/uhc/api/event/team/TeamCreatedEvent.java
+ org.mcwonderland.uhc.api.event.team.TeamCreatedEvent
+org/mcwonderland/uhc/api/event/timer/DamageEnableEvent.java
+ org.mcwonderland.uhc.api.event.timer.DamageEnableEvent
+org/mcwonderland/uhc/game/timer/impl/countdown/FinalHealCountdown.java
+ org.mcwonderland.uhc.game.timer.impl.countdown.FinalHealCountdown
+org/mcwonderland/uhc/hook/voice/DiscordVoiceHook.java
+ org.mcwonderland.uhc.hook.voice.DiscordVoiceHook
+org/mcwonderland/uhc/game/state/share/join/DefaultJoinMessage.java
+ org.mcwonderland.uhc.game.state.share.join.DefaultJoinMessage
