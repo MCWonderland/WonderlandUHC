@@ -14,7 +14,7 @@
 **!! 須知：由於插件剛經過大量整合，目前穩定度並不高。若遊玩過程發現 Bug，請[依照此處說明回報](https://github.com/MCWonderland/WonderlandUHC#%E5%9B%9E%E5%A0%B1-bug)。 !!**
 
 1. 至 [release](https://github.com/MCWonderland/WonderlandUHC/releases) 處下載最新插件檔案
-2. 參考教學影片系列安裝插件 [連結](https://youtu.be/muiqzpNwOAk)
+2. 參考教學影片系列安裝插件 [連結](https://www.youtube.com/playlist?list=PL86KqzDo7_n0Vkthb9I85hfS390i-4NPb)
 3. 開心遊玩！
 
 ## 回報 Bug
