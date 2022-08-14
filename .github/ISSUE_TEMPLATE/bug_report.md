@@ -1,38 +1,23 @@
 ---
-name: Bug report
-about: Create a report to help us improve
+name: Bug 回報
+about: 回報插件錯誤
 title: ''
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
-A clear and concise description of what the bug is.
+**請問您的遊戲版本為？**
+請在此輸入
 
-**To Reproduce**
-Steps to reproduce the behavior:
-1. Go to '...'
-2. Click on '....'
-3. Scroll down to '....'
-4. See error
+**請問您的 Java 版本為？ ([查看方式](https://pclevinblog.pixnet.net/blog/post/314562265-%5Bjava%5Djava%E5%A6%82%E4%BD%95%E6%9F%A5%E7%9C%8B%E7%89%88%E6%9C%AC%E4%BD%8D%E5%85%83))**
+請在此輸入版本，或是提供後台截圖
 
-**Expected behavior**
-A clear and concise description of what you expected to happen.
+**請問 Bug 的內容是？**
+請在此輸入這個 Bug 的發生情形，以及它造成了什麼問題
 
-**Screenshots**
-If applicable, add screenshots to help explain your problem.
+**請問是怎麼觸發這個 Bug 的呢？**
+請在此輸入您做了什麼事情，才觸發這個問題
 
-**Desktop (please complete the following information):**
- - OS: [e.g. iOS]
- - Browser [e.g. chrome, safari]
- - Version [e.g. 22]
-
-**Smartphone (please complete the following information):**
- - Device: [e.g. iPhone6]
- - OS: [e.g. iOS8.1]
- - Browser [e.g. stock browser, safari]
- - Version [e.g. 22]
-
-**Additional context**
-Add any other context about the problem here.
+**媒體提供**
+若是您方便，請在此提供上傳相關圖片或影片的連結，讓我能更快理解 Bug 發生的來龍去脈！
