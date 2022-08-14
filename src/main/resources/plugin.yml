@@ -1,6 +1,6 @@
 main: org.mcwonderland.uhc.WonderlandUHC
 name: WonderlandUHC
-version: 1.0.0-alpha-1
+version: 1.0.0-alpha-2
 author: LU__LU
 softdepend: [ WorldBorder, PacketListenerApi, DiscordSRV, custom-ore-generator ]
 api-version: 1.13
