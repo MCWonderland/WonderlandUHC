@@ -15,6 +15,7 @@ public class TestingTest {
     @Before
     public void setUp() {
         server = MockBukkit.mock();
+        plugin = MockBukkit.load(WonderlandUHC.class);
     }
 
     @Test

@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import me.lulu.datounms.DaTouNMS;
 import me.lulu.datounms.UnSupportedNmsException;
+import org.bukkit.plugin.PluginDescriptionFile;
+import org.bukkit.plugin.java.JavaPluginLoader;
+import org.jetbrains.annotations.NotNull;
 import org.mcwonderland.uhc.api.event.scenario.ScenarioInitEvent;
 import org.mcwonderland.uhc.command.TestCommand;
 import org.mcwonderland.uhc.command.impl.LeaveCommand;
@@ -57,6 +60,8 @@ import org.mineacademy.fo.model.SimpleSound;
 import org.mineacademy.fo.plugin.SimplePlugin;
 import org.mineacademy.fo.remain.CompSound;
 
+import java.io.File;
+
 
 public class WonderlandUHC extends SimplePlugin {
     public static Boolean TEST_MODE = false;
@@ -76,6 +81,13 @@ public class WonderlandUHC extends SimplePlugin {
 
     public static WonderlandUHC getInstance() {
         return ( WonderlandUHC ) SimplePlugin.getInstance();
+    }
+
+    public WonderlandUHC(@NotNull JavaPluginLoader loader, @NotNull PluginDescriptionFile description, @NotNull File dataFolder, @NotNull File file) {
+        super(loader, description, dataFolder, file);
+    }
+
+    public WonderlandUHC() {
     }
 
     @Override
@@ -310,4 +322,5 @@ public class WonderlandUHC extends SimplePlugin {
             Bukkit.createWorld(wc);
         }
     }
+
 }
