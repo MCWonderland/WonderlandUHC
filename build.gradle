@@ -7,9 +7,10 @@ group = 'me.lulu'
 version = '1.0.0-alpha-2'
 
 compileJava {
-    sourceCompatibility = '1.8'
-    targetCompatibility = '1.8'
+    sourceCompatibility = 8
+    targetCompatibility = 8
 }
+
 
 shadowJar {
     relocate("org.mineacademy", "org.mcwonderland.uhc.lib")
@@ -21,11 +22,17 @@ repositories {
     flatDir { dir("./libs") }
 
     maven { url 'https://jitpack.io' }
+
     maven {
         name 'm2-dv8tion'
         url 'https://m2.dv8tion.net/releases'
     }
     maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+
+
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://oss.sonatype.org/content/groups/public/' }
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
 
     maven {
         name = "naluwan"
@@ -36,8 +43,6 @@ repositories {
             password = findProperty('naluwanPassword')
         }
     }
-
-    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
 }
 
 dependencies {
@@ -51,7 +56,7 @@ dependencies {
     compileOnly name: 'custom-ore-generator-2022.06.11'
     compileOnly 'com.github.Brettflan:WorldBorder:44f388f3ba'
 
-    compileOnly 'org.spigotmc:spigot-api:1.19-R0.1-SNAPSHOT'
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
@@ -59,6 +64,11 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.24'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.16:1.5.2'
+
+    testImplementation 'junit:junit:4.13'
 }
 
 test {
