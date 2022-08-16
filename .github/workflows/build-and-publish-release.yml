@@ -25,3 +25,6 @@ jobs:
 
       - name: Execute Gradle build
         run: gradle shadowJar
+        env:
+          PRIVATE_REPO_USERNAME: ${{ secrets.PRIVATE_REPO_USERNAME }}
+          PRIVATE_REPO_PASSWORD: ${{ secrets.PRIVATE_REPO_PASSWORD }}
