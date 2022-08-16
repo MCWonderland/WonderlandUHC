@@ -44,11 +44,14 @@ jobs:
       - name: Find Output Jar Path And Store As Env
         run: echo "RELEASE_JAR_PATH=$(find ./build/libs -type f -name '*.jar')" >> $GITHUB_ENV
 
+      - name: Store Jar Name As Env
+        run: echo "RELEASE_JAR_NAME=$(basename $RELEASE_JAR_PATH)" >> $GITHUB_ENV
+
       - uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ${{ env.RELEASE_JAR_PATH }}
-#          asset_name: my-artifact.zip
+          asset_name: ${{ env.RELEASE_JAR_NAME }}
           asset_content_type: application/zip
