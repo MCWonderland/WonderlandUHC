@@ -15,10 +15,8 @@ jobs:
           distribution: corretto
           java-version: 8
 
-      - name: Setup gradle wrapper
+      - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
-        with:
-          arguments: wrapper
 
       - name: Execute Gradle build
         run: ./gradlew build
