@@ -27,8 +27,8 @@ jobs:
           PRIVATE_REPO_USERNAME: ${{ secrets.PRIVATE_REPO_USERNAME }}
           PRIVATE_REPO_PASSWORD: ${{ secrets.PRIVATE_REPO_PASSWORD }}
 
-      - name: Get Current Tag And Set As Env
-        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
+      - name: Get Plugin Version From build.gradle And Store It
+        run: echo "RELEASE_VERSION=$(gradle properties -q | grep "version:" | awk '{print $2}')" >> $GITHUB_ENV
 
       - name: Create Draft Release
         id: create_release
@@ -41,11 +41,14 @@ jobs:
           draft: true
           prerelease: false
 
-#      - uses: actions/upload-release-asset@v1.0.1
-#        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#        with:
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#          asset_path: ./my-artifact.zip
+      - name: Find Output Jar Path And Store As Env
+        run: echo "RELEASE_JAR_PATH=$(find ./build/libs -type f -name '*.jar')" >> $GITHUB_ENV
+
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.RELEASE_JAR_PATH }}
 #          asset_name: my-artifact.zip
-#          asset_content_type: application/zip
+          asset_content_type: application/zip
