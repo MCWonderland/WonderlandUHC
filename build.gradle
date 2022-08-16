@@ -11,6 +11,11 @@ compileJava {
     targetCompatibility = 8
 }
 
+processResources {
+    filesMatching('plugin.yml') {
+        expand 'pluginVersion': project.version
+    }
+}
 
 shadowJar {
     relocate("org.mineacademy", "org.mcwonderland.uhc.lib.mineacademy")
@@ -40,8 +45,8 @@ repositories {
         url = uri("https://repo.naluwan.net/snapshot")
 
         credentials {
-            username = findProperty('naluwanUsername')
-            password = findProperty('naluwanPassword')
+            username = findProperty('naluwanUsername') ?: System.getenv("PRIVATE_REPO_USERNAME")
+            password = findProperty('naluwanPassword') ?: System.getenv("PRIVATE_REPO_PASSWORD")
         }
     }
 }

@@ -19,7 +19,6 @@ out/
 *.ctxt
 
 # Package Files #
-*.jar
 *.war
 *.nar
 *.ear
@@ -116,3 +115,4 @@ buildNumber.properties
 run/
 
 .gradle
+/gradle/wrapper/gradle-wrapper.jar
