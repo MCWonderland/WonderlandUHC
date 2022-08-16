@@ -13,7 +13,8 @@ compileJava {
 
 
 shadowJar {
-    relocate("org.mineacademy", "org.mcwonderland.uhc.lib")
+    relocate("org.mineacademy", "org.mcwonderland.uhc.lib.mineacademy")
+    relocate("org.apache", "org.mcwonderland.uhc.lib.apache")
     classifier = ""
 }
 
@@ -57,6 +58,8 @@ dependencies {
     compileOnly 'com.github.Brettflan:WorldBorder:44f388f3ba'
 
     compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+
+    implementation 'commons-lang:commons-lang:2.6'
 
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.24'
