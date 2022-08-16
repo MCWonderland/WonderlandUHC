@@ -1,8 +1,10 @@
 name: "Build And Publish Release"
 on:
   push:
-    tags:
-      - "v*-SNAPSHOT"
+    branches:
+      - "github-action-ci"
+#    tags:
+#      - "v*-SNAPSHOT"
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -13,8 +15,10 @@ jobs:
           distribution: corretto
           java-version: 8
 
-      - name: Setup Gradle
+      - name: Setup gradle wrapper
         uses: gradle/gradle-build-action@v2
+        with:
+          arguments: wrapper
 
       - name: Execute Gradle build
-        run: ./gradlew shadowJar
+        run: ./gradlew build
