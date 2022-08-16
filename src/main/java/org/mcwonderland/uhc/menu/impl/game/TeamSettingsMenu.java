@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.menu.impl.game;
 
+import org.apache.commons.lang.StringUtils;
 import org.mcwonderland.uhc.UHCPermission;
 import org.mcwonderland.uhc.game.UHCTeam;
 import org.mcwonderland.uhc.menu.UHCMenuSection;
@@ -7,7 +8,6 @@ import org.mcwonderland.uhc.menu.model.ColorPickerMenu;
 import org.mcwonderland.uhc.settings.Messages;
 import org.mcwonderland.uhc.settings.Settings;
 import org.mcwonderland.uhc.util.Chat;
-import org.apache.commons.lang3.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;

@@ -1,7 +1,7 @@
 package org.mcwonderland.uhc.scoreboard;
 
 import lombok.Getter;
-import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
