@@ -11,6 +11,11 @@ compileJava {
     targetCompatibility = 8
 }
 
+processResources {
+    filesMatching('plugin.yml') {
+        expand 'pluginVersion': project.version
+    }
+}
 
 shadowJar {
     relocate("org.mineacademy", "org.mcwonderland.uhc.lib.mineacademy")

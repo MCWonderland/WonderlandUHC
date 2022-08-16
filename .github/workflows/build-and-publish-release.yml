@@ -1,10 +1,8 @@
 name: "Build And Publish Release"
 on:
   push:
-    branches:
-      - "github-action-ci"
     tags:
-      - "v*-SNAPSHOT"
+      - "*"
 
 jobs:
   build:
@@ -55,3 +53,9 @@ jobs:
           asset_path: ${{ env.RELEASE_JAR_PATH }}
           asset_name: ${{ env.RELEASE_JAR_NAME }}
           asset_content_type: application/zip
+
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}
