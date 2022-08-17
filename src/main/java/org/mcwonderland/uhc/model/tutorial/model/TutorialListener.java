@@ -13,7 +13,6 @@ public class TutorialListener implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onChat(AsyncPlayerChatEvent e) {
-        System.out.println("Hello");
         Player player = e.getPlayer();
         String message = e.getMessage();
 
