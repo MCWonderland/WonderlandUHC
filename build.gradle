@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'me.lulu'
-version = '1.0.2-SNAPSHOT'
+version = '1.0.3-SNAPSHOT'
 
 compileJava {
     sourceCompatibility = 8
