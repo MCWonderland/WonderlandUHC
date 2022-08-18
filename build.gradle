@@ -83,6 +83,7 @@ dependencies {
     testImplementation 'junit:junit:4.13'
 
     testImplementation "io.mockk:mockk:1.12.5"
+    testImplementation "org.reflections:reflections:0.9.12"
 }
 
 test {

@@ -70,6 +70,7 @@ public class YamlConfigLoader {
             field.setAccessible(true);
             field.set(null, getFieldValueInYaml(field));
         } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
