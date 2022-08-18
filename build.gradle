@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'org.jetbrains.kotlin.jvm' version '1.7.10'
 }
 
 group = 'me.lulu'
@@ -24,6 +25,7 @@ shadowJar {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     flatDir { dir("./libs") }
 
@@ -52,6 +54,8 @@ repositories {
 }
 
 dependencies {
+    compileOnly "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
+
     implementation 'org.mineacademy:Foundation:6.0.8'
     implementation 'com.github.lulu2002:DatouNms:1.2.2'
 
@@ -74,9 +78,11 @@ dependencies {
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
 
     testImplementation 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
-    testImplementation 'com.github.seeseemelk:MockBukkit-v1.16:1.5.2'
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.16:1.0.0-SNAPSHOT'
 
     testImplementation 'junit:junit:4.13'
+
+    testImplementation "io.mockk:mockk:1.12.5"
 }
 
 test {
@@ -91,4 +97,16 @@ configurations {
 
 tasks.withType(JavaCompile).configureEach {
     options.forkOptions.jvmArgs.addAll(['--add-opens', 'jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED'])
+}
+
+compileKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+compileTestKotlin {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
 }
