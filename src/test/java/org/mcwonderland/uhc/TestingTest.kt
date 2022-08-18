@@ -3,17 +3,14 @@ package org.mcwonderland.uhc
 import be.seeseemelk.mockbukkit.MockBukkit
 import be.seeseemelk.mockbukkit.ServerMock
 import com.google.common.io.Resources
-import io.mockk.every
-import io.mockk.mockkObject
-import io.mockk.mockkStatic
+import io.mockk.*
 import org.bukkit.Bukkit
-import org.bukkit.plugin.java.JavaPlugin
-import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.mineacademy.fo.FileUtil
+import org.mineacademy.fo.plugin.AutoRegisterScanner
 import org.mineacademy.fo.plugin.SimplePlugin
-import java.io.File
+import org.mineacademy.fo.remain.Remain
 
 class TestingTest {
     private lateinit var server: ServerMock
@@ -27,6 +24,9 @@ class TestingTest {
         mockkObject(bukkitPackage)
         mockkStatic(SimplePlugin::class)
         mockkStatic(FileUtil::class)
+        mockkStatic(Remain::class)
+        mockkStatic(AutoRegisterScanner::class)
+
 
         every { SimplePlugin.getInstance() } answers {
             val simplePlugin = server.pluginManager.getPlugin("WonderlandUHC") as SimplePlugin
@@ -43,13 +43,16 @@ class TestingTest {
             Resources.getResource(fileName).readText().split("\n").toList()
         }
 
+        every { Remain.injectServerName() } just runs
+        every { AutoRegisterScanner.scanAndRegister() } just runs
+
         plugin = MockBukkit.load(WonderlandUHC::class.java)
     }
 
     @Test
     fun test() {
 //        val player = server.addPlayer()
-        Assert.assertEquals(1, 1)
+//        Assert.assertEquals(1, 1)
 
 //        println(Resources.getResource("plugin.yml").readText().split("\n").toList())
     }
