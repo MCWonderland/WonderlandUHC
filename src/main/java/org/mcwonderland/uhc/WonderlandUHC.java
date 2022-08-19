@@ -93,7 +93,7 @@ public class WonderlandUHC extends SimplePlugin {
     @Override
     public void onPluginStart() {
         loadFiles();
-        setupNms();
+        NmsLoader.initNms(this);
         registerListeners();
         registerCommands();
         Extra.createHead();
@@ -102,24 +102,15 @@ public class WonderlandUHC extends SimplePlugin {
         if (Dependency.DISCORD_SRV.isHooked())
             DiscordVoiceHook.setup();
 
-        Common.runLater(1, () -> {
-            scenarioManager.registerDefaults();
-            Common.callEvent(new ScenarioInitEvent());
-            checkWorldLoadingStatusAndDoSomeStaff();
-            UHCGameSettingsSaver.reloadFromFile();
-            logPluginEnabledMessage();
-        });
-
         Common.setTellPrefix("");
+
+        scenarioManager.registerDefaults();
+        Common.callEvent(new ScenarioInitEvent());
+        checkWorldLoadingStatusAndDoSomeStaff();
+        UHCGameSettingsSaver.reloadFromFile();
+        logPluginEnabledMessage();
     }
 
-    private void setupNms() {
-        try {
-            DaTouNMS.setup(this);
-        } catch (UnSupportedNmsException e) {
-            throw new FoException("&cUnsupported version, this plugin only support 1.8 ~ 1.16");
-        }
-    }
 
     @Override
     protected void onPluginReload() {
@@ -130,7 +121,7 @@ public class WonderlandUHC extends SimplePlugin {
 
     @Override
     protected void onReloadablesStart() {
-        checkDepends();
+        DependencyChecker.checkDepends();
 
         Bukkit.getMessenger().registerOutgoingPluginChannel(this, "BungeeCord");
         modifyFoundationLibraryValues();
@@ -154,45 +145,7 @@ public class WonderlandUHC extends SimplePlugin {
         checkTestMode();
     }
 
-    private void checkDepends() {
-        Dependency.WORLD_BORDER.check();
-        Dependency.PACKET_LISTENER_API.check();
-        checkWorldBorderVer();
 
-        if (Dependency.CUSTOM_ORE_GENERATOR.isHooked())
-            checkCustomOreGenerator();
-    }
-
-    private void checkCustomOreGenerator() {
-        try {
-            Class.forName("de.derfrzocker.custom.ore.generator.api.OreSettingContainer");
-        } catch (ClassNotFoundException e) {
-            throw new FoException("&cCustomOreGenerator 版本過舊，請至 &f"
-                    + Dependency.CUSTOM_ORE_GENERATOR.getDownloadUrl() +
-                    " &c下載最新版本！");
-        }
-    }
-
-    @SneakyThrows
-    private void checkWorldBorderVer() {
-        Dependency worldBorder = Dependency.WORLD_BORDER;
-        boolean newer = MinecraftVersion.atLeast(MinecraftVersion.V.v1_13);
-        boolean usingNewerWb = VersionComparator.isNewerThan(worldBorder.getVersion(), "1.8.7");
-
-        if (newer && !usingNewerWb) {
-            Common.log(new SimpleReplacer(Messages.Dependency.USING_OLD_WORLD_BORDER_IN_NEW_VERSION)
-                    .replace("{link}", worldBorder.getDownloadUrl())
-                    .toArray());
-            Thread.sleep(3 * 1000);
-            return;
-        }
-
-        if (!newer && usingNewerWb) {
-            Thread.sleep(3 * 1000);
-            throw new FoException(Messages.Dependency.CHANGE_TO_OLDER_WORLD_BORDER_VERSION
-                    .replace("{link}", worldBorder.getDownloadUrl()));
-        }
-    }
 
     public static void checkTestMode() {
         if (!TEST_MODE)
