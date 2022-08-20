@@ -1,0 +1,17 @@
+name: Test Discord
+
+on:
+  push:
+    branches:
+      - "discord-test"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Discord notification
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        uses: Ilshidur/action-discord@master
+        with:
+          args: 'Hello World'
