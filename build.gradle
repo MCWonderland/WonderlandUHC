@@ -40,15 +40,15 @@ repositories {
     maven { url 'https://oss.sonatype.org/content/groups/public/' }
     maven { url 'https://repo.papermc.io/repository/maven-public/' }
 
-    maven {
-        name = "naluwan"
-        url = uri("https://repo.naluwan.net/snapshot")
-
-        credentials {
-            username = findProperty('naluwanUsername') ?: System.getenv("PRIVATE_REPO_USERNAME")
-            password = findProperty('naluwanPassword') ?: System.getenv("PRIVATE_REPO_PASSWORD")
-        }
-    }
+//    maven {
+//        name = "naluwan"
+//        url = uri("https://repo.naluwan.net/snapshot")
+//
+//        credentials {
+//            username = findProperty('naluwanUsername') ?: System.getenv("PRIVATE_REPO_USERNAME")
+//            password = findProperty('naluwanPassword') ?: System.getenv("PRIVATE_REPO_PASSWORD")
+//        }
+//    }
 }
 
 dependencies {
