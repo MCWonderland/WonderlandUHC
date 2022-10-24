@@ -42,12 +42,7 @@ repositories {
 
     maven {
         name = "naluwan"
-        url = uri("https://repo.naluwan.net/snapshot")
-
-        credentials {
-            username = findProperty('naluwanUsername') ?: System.getenv("PRIVATE_REPO_USERNAME")
-            password = findProperty('naluwanPassword') ?: System.getenv("PRIVATE_REPO_PASSWORD")
-        }
+        url = uri("https://repo.naluwan.net/public-snapshot")
     }
 }
 
