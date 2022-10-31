@@ -6,7 +6,7 @@ import org.bukkit.entity.Entity;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 
 /**
- * 2019-12-09 下午 12:35
+ * 2019-12-09 下午......................................... 12:35
  */
 @Getter
 public class UHCPlayerDamageByEntityEvent extends UHCPlayerDamageEvent {
