@@ -14,6 +14,7 @@ import org.mcwonderland.uhc.util.Extra;
 import org.mineacademy.fo.model.SimpleSound;
 
 import java.util.HashSet;
+import java.util.Random;
 import java.util.Set;
 
 public class ScenarioMole extends ConfigBasedScenario implements Listener {
@@ -50,15 +51,14 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
     }
 
     public void doMoleSpawn() {
-        // 每個隊伍中選出一位間諜
-        // 邏輯 1：每個隊伍中隨機選出一個間諜
-        // 邏輯 2：所有玩家中隨機選出 n 個間諜，間諜的隊伍不能重複
-        // 判斷：玩家是否存活？玩家是否跟其他玩家隊伍相同？
+        for (UHCTeam team : UHCTeam.getAliveTeams()) {
+            Object[] teamPlayers = team.getPlayers().toArray();
 
-        Set<UHCTeam> aliveTeams = UHCTeam.getAliveTeams();
+            Random rndm = new Random();
+            int rndmNumber = rndm.nextInt(team.getPlayersAmount());
 
-        Set<UHCPlayer> players = UHCPlayer.getAllPlayers();
-
+            molePlayers.add((UHCPlayer) teamPlayers[rndmNumber]);
+        }
     }
     public static Set<UHCPlayer> getMoleList() {
         return Sets.newHashSet(molePlayers);
