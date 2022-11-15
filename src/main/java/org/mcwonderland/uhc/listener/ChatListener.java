@@ -16,7 +16,6 @@ public class ChatListener implements Listener {
         UHCPlayer uhcPlayer = UHCPlayer.getUHCPlayer(player);
         String message = e.getMessage();
 
-        //sdjlfsjdfjsldfjkps
         e.setCancelled(true);
         uhcPlayer.chat(message);
 
