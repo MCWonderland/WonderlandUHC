@@ -260,3 +260,6 @@ Mole:
   Mole_Spawn_Minutes: 20
   Mole_Countdown_Sound: NOTE_PLING 1.0F 1.0F
   Mole_Spawn_Sound: NOTE_PLING 1.0F 2.0F
+  Mole_Countdown_Message: "&8[&c&l間諜模式&8] &7間諜將在 &7{second} &7秒後產生"
+  Mole_Player_Message: "&8[&c&l間諜模式&8] &7你是間諜！"
+  NotMole_Player_Message: "&8[&c&l間諜模式&8] &7你不是間諜！"

@@ -28,7 +28,16 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
     @FilePath(name = "Mole_Spawn_Sound")
     private SimpleSound moleSpawnSound;
 
-    private Integer moleSpawnSeconds = moleSpawnMinutes * 60 + 5;
+    @FilePath(name = "Mole_Countdown_Message")
+    private String moleCountdownMessage;
+
+    @FilePath(name = "Mole_Player_Message")
+    private String molePlayerMessage;
+
+    @FilePath(name = "NotMole_Player_Message")
+    private String notMolePlayerMessage;
+
+    private Integer moleSpawnSeconds;
 
     private static Set<UHCPlayer> molePlayers = new HashSet<>();
 
@@ -36,17 +45,24 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
         super(name);
     }
 
+    @Override
+    protected void onConfigReload() {
+        moleSpawnSeconds = moleSpawnMinutes * 60 + 5;
+    }
+
     @EventHandler
     public void setMoleSpawnCountdown(UHCGameTimerUpdateEvent event) {
         int currentSecond = event.getCurrentSecond();
         int secondToSpawn = moleSpawnSeconds - currentSecond;
 
-        if (secondToSpawn <= 0) {
+        if (secondToSpawn == 0) {
             doMoleSpawn();
+            sendMoleSpawnMessage();
             Extra.sound(moleSpawnSound);
+
         } else if (Extra.isBetween(secondToSpawn, 1, 5)) {
             Extra.sound(moleSpawnCountdownSound);
-            Chat.broadcast("&8[&c&l間諜模式&8] 間諜將在 " + secondToSpawn + " 秒後產生");
+            Chat.broadcast(moleCountdownMessage.replace("{second}", "" + secondToSpawn));
         }
     }
 
@@ -60,18 +76,28 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
             molePlayers.add((UHCPlayer) teamPlayers[rndmNumber]);
         }
     }
+
+    public void sendMoleSpawnMessage() {
+        for (UHCPlayer player : UHCPlayer.getAllPlayers()) {
+            if (molePlayers.contains(player)) {
+                Chat.broadcast(molePlayerMessage);
+            } else if (!molePlayers.contains(molePlayerMessage)) {
+                Chat.broadcast(notMolePlayerMessage);
+            }
+        }
+    }
+
     public static Set<UHCPlayer> getMoleList() {
         return Sets.newHashSet(molePlayers);
     }
 
     public boolean isMole(UHCPlayer player) {
-        if (player == molePlayers) {
+        if (molePlayers.contains(player)) {
             return true;
         } else {
             return false;
         }
     }
-
 
 
 }

@@ -11,7 +11,7 @@ public class UHCGameTimerUpdateEvent extends UHCTimerEvent {
 
     public UHCGameTimerUpdateEvent(Game game, int currentSecond) {
         super();
-        currentSecond = this.currentSecond;
+        this.currentSecond = currentSecond;
     }
 
     public int getCurrentSecond() {
