@@ -1,24 +1,25 @@
 package org.mcwonderland.uhc.game;
 
+import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.mcwonderland.uhc.WonderlandUHC;
 import org.mcwonderland.uhc.api.event.timer.GameEndEvent;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
-import org.mcwonderland.uhc.game.player.UHCPlayers;
 import org.mcwonderland.uhc.game.settings.CacheSaver;
 import org.mcwonderland.uhc.model.freeze.FreezeMode;
+import org.mcwonderland.uhc.scenario.impl.special.ScenarioMole;
 import org.mcwonderland.uhc.settings.Messages;
 import org.mcwonderland.uhc.settings.Settings;
 import org.mcwonderland.uhc.settings.Sounds;
 import org.mcwonderland.uhc.util.Chat;
 import org.mcwonderland.uhc.util.Extra;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.remain.CompMaterial;
 
 import java.util.List;
+import java.util.Set;
 
 public class GameManager {
 
@@ -48,6 +49,9 @@ public class GameManager {
         UHCTeam winningTeam = null;
 
         for (UHCTeam team : UHCTeam.getTeams()) {
+            if (Game.getSettings().getScenarios().contains("MOLE")) {
+                return null;
+            }
             if (!team.isEliminate()) {
                 if (winningTeam != null)
                     return null;
@@ -65,12 +69,23 @@ public class GameManager {
         if (team == null)
             return;
 
-
         broadcastWinning(team);
         Common.callEvent(new GameEndEvent());
 
         if (!WonderlandUHC.TEST_MODE)
             CacheSaver.deleteCache();
+    }
+
+    public static void checkMoleWin() {
+        Set<UHCPlayer> molePlayers = ScenarioMole.getMoleList();
+
+        // 這邊先假設 getAllPlayers() 存取到的是活著的所有玩家
+        if (molePlayers.containsAll(UHCPlayer.getAllPlayers())) {
+            //BroadCast winning
+            Common.callEvent(new GameEndEvent());
+        } else {
+            return;
+        }
     }
 
     private static void broadcastWinning(UHCTeam winner) {
@@ -94,9 +109,6 @@ public class GameManager {
             String s = list.get(i);
             if (s.contains("{players}")) {
                 list.remove(s);
-                for (String name : UHCPlayers.toNames(winner.getPlayers())) {
-                    list.add(i, s.replace("{players}", name));
-                }
             }
         }
 

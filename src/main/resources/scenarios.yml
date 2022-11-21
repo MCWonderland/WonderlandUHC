@@ -256,7 +256,7 @@ Mole:
   Type: SPIDER_EYE
   Name: "&c間諜模式&7(Mole)"
   Description:
-    - "遊戲時間進行到 {fancy_time} 時，每個隊伍將會選出一個間諜，間諜的目標是聯合其他間諜一同把平民殺死，而平民們則是要聯手把間諜揪出來。"
+    - "遊戲時間進行到 {fancy-time} 時，每個隊伍將會選出一個間諜。"
   Mole_Spawn_Minutes: 20
   Mole_Countdown_Sound: NOTE_PLING 1.0F 1.0F
   Mole_Spawn_Sound: NOTE_PLING 1.0F 2.0F

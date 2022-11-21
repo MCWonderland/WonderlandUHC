@@ -11,13 +11,17 @@ import org.mcwonderland.uhc.scenario.annotation.FilePath;
 import org.mcwonderland.uhc.scenario.impl.ConfigBasedScenario;
 import org.mcwonderland.uhc.util.Chat;
 import org.mcwonderland.uhc.util.Extra;
+import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.model.SimpleSound;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
 public class ScenarioMole extends ConfigBasedScenario implements Listener {
+
+    //todo 勝利判斷
 
     @FilePath(name = "Mole_Spawn_Minutes")
     private Integer moleSpawnMinutes;
@@ -47,7 +51,13 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
 
     @Override
     protected void onConfigReload() {
-        moleSpawnSeconds = moleSpawnMinutes * 60 + 5;
+        moleSpawnSeconds = moleSpawnMinutes * 60 + 6;
+    }
+
+    @Override
+    protected SimpleReplacer replaceLore(List<String> list) {
+        return super.replaceLore(list)
+                .replaceTime(moleSpawnMinutes * 60);
     }
 
     @EventHandler

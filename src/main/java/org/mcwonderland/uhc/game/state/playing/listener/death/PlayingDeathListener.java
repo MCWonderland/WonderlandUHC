@@ -118,7 +118,11 @@ public class PlayingDeathListener implements Listener {
     public void removeGaming(UHCGamingDeathEvent e) {
         removeRelogCaches(e.getEntity());
 
-        GameManager.checkWin();
+        if (Game.getSettings().getScenarios().contains("MOLE")){
+            GameManager.checkMoleWin();
+        } else {
+            GameManager.checkWin();
+        }
     }
 
     private void removeRelogCaches(LivingEntity entity) {

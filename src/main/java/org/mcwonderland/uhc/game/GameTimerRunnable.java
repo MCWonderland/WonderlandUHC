@@ -25,7 +25,7 @@ public class GameTimerRunnable implements Runnable {
         if (tick > 19) {
             totalSecond++;
             tick = 0;
-            Bukkit.getPluginManager().callEvent(new UHCGameTimerUpdateEvent(Game.getGame(), totalSecond));
+            Bukkit.getPluginManager().callEvent(new UHCGameTimerUpdateEvent(totalSecond));
         }
 
         for (Timer timer : Game.getGame().getCurrentState().getTimers()) {
