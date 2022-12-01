@@ -36,10 +36,10 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
     private String moleCountdownMessage;
 
     @FilePath(name = "Mole_Player_Message")
-    private String molePlayerMessage;
+    private List<String> molePlayerMessage;
 
     @FilePath(name = "NotMole_Player_Message")
-    private String notMolePlayerMessage;
+    private List<String> notMolePlayerMessage;
 
     private Integer moleSpawnSeconds;
 
@@ -90,9 +90,9 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
     public void sendMoleSpawnMessage() {
         for (UHCPlayer player : UHCPlayer.getAllPlayers()) {
             if (molePlayers.contains(player)) {
-                Chat.broadcast(molePlayerMessage);
-            } else if (!molePlayers.contains(molePlayerMessage)) {
-                Chat.broadcast(notMolePlayerMessage);
+                Chat.send(player.getPlayer(), molePlayerMessage);
+            } else if (!molePlayers.contains(player)) {
+                Chat.send(player.getPlayer(), notMolePlayerMessage);
             }
         }
     }
