@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.mcwonderland.uhc.WonderlandUHC;
 import org.mcwonderland.uhc.api.event.timer.GameEndEvent;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
+import org.mcwonderland.uhc.game.player.UHCPlayers;
 import org.mcwonderland.uhc.game.settings.CacheSaver;
 import org.mcwonderland.uhc.model.freeze.FreezeMode;
 import org.mcwonderland.uhc.scenario.impl.special.ScenarioMole;
@@ -51,8 +52,7 @@ public class GameManager {
         for (UHCTeam team : UHCTeam.getTeams()) {
             if (Game.getSettings().getScenarios().contains("MOLE")) {
                 return null;
-            }
-            if (!team.isEliminate()) {
+            } else if (!team.isEliminate()) {
                 if (winningTeam != null)
                     return null;
                 else
@@ -81,11 +81,44 @@ public class GameManager {
 
         // 這邊先假設 getAllPlayers() 存取到的是活著的所有玩家
         if (molePlayers.containsAll(UHCPlayer.getAllPlayers())) {
-            //BroadCast winning
+            broadcastMoleWinning();
             Common.callEvent(new GameEndEvent());
-        } else {
-            return;
         }
+    }
+
+    private static void broadcastMoleWinning() {
+        List<String> winningMsg = getMoleWinningMsg();
+
+        Chat.broadcast(winningMsg.toArray(new String[0]));
+        Extra.sound(Sounds.Game.WIN);
+    }
+
+    private static List<String> getMoleWinningMsg() {
+        int moleKills = 0;
+
+        for (UHCPlayer player : ScenarioMole.getMoleList()) {
+            moleKills += player.getKills();
+        }
+
+        SimpleReplacer simpleReplacer = new SimpleReplacer(Messages.Game.VICTORY_BROADCAST)
+                .replace("{winner}", "間諜")
+                .replace("{kills}", "" + moleKills)
+                .replace("{host}", Game.getGame().getHost());
+
+        List<String> list = simpleReplacer.buildList();
+
+        //todo 優化code
+        for (int i = 0; i < list.size(); i++) {
+            String s = list.get(i);
+            if (s.contains("{players}")) {
+                list.remove(s);
+                for (String name : UHCPlayers.toNames(ScenarioMole.getMoleList())) {
+                    list.add(i, s.replace("{players}", name));
+                }
+            }
+        }
+
+        return list;
     }
 
     private static void broadcastWinning(UHCTeam winner) {
@@ -109,6 +142,9 @@ public class GameManager {
             String s = list.get(i);
             if (s.contains("{players}")) {
                 list.remove(s);
+                for (String name : UHCPlayers.toNames(winner.getPlayers())) {
+                    list.add(i, s.replace("{players}", name));
+                }
             }
         }
 
