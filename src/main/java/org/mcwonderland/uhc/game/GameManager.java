@@ -19,6 +19,8 @@ import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.remain.CompMaterial;
 
+import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -50,9 +52,7 @@ public class GameManager {
         UHCTeam winningTeam = null;
 
         for (UHCTeam team : UHCTeam.getTeams()) {
-            if (Game.getSettings().getScenarios().contains("MOLE")) {
-                return null;
-            } else if (!team.isEliminate()) {
+            if (!team.isEliminate()) {
                 if (winningTeam != null)
                     return null;
                 else
@@ -79,8 +79,11 @@ public class GameManager {
     public static void checkMoleWin() {
         Set<UHCPlayer> molePlayers = ScenarioMole.getMoleList();
 
-        // 這邊先假設 getAllPlayers() 存取到的是活著的所有玩家
-        if (molePlayers.containsAll(UHCPlayer.getAllPlayers())) {
+        HashSet<UHCPlayer> players = new HashSet<>();
+        for (UHCTeam team : UHCTeam.getAliveTeams()) {
+            players.addAll(team.getAlives());
+        }
+        if (molePlayers.containsAll(players)) {
             broadcastMoleWinning();
             Common.callEvent(new GameEndEvent());
         }
@@ -94,7 +97,7 @@ public class GameManager {
     }
 
     private static List<String> getMoleWinningMsg() {
-        int moleKills = 0;
+         int moleKills = 0;
 
         for (UHCPlayer player : ScenarioMole.getMoleList()) {
             moleKills += player.getKills();
