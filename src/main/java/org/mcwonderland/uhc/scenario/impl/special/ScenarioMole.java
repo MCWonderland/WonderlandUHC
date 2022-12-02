@@ -21,7 +21,11 @@ import java.util.Set;
 
 public class ScenarioMole extends ConfigBasedScenario implements Listener {
 
-    //todo 勝利判斷
+    //todo 指令
+    // mole chat
+    // mole scs
+    // mole kit
+    // mole list
 
     @FilePath(name = "Mole_Spawn_Minutes")
     private Integer moleSpawnMinutes;
