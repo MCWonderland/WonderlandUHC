@@ -257,10 +257,13 @@ Mole:
   Name: "&c間諜模式&7(Mole)"
   Description:
     - "遊戲時間進行到 {fancy-time} 時，每個隊伍將會選出一個間諜。"
-  Mole_Spawn_Minutes: 1
+  Mole_Spawn_Minutes: 20
   Mole_Countdown_Sound: NOTE_PLING 1.0F 1.0F
   Mole_Spawn_Sound: NOTE_PLING 1.0F 2.0F
+  Mole_Team_Name: "&c&l間諜"
   Mole_Countdown_Message: "&7[&c&l間諜模式&7] &7間諜將在 &7{second} &7秒後產生"
+  The_Sword_Of_Punishment_Receiver_Message: "&7[&c&l間諜模式&7] &7你是懲戒之劍的持有者！請注意，這把劍&c&l只能使用一次&7，務必謹慎使用，對&4&l正確的人&7揮下正義的一刀。"
+  Mole_Access_Deny_Message: "&7[&c&l間諜模式&7] &c你不是間諜。"
   Mole_Player_Message:
     - "&8&m―――――――――――――――――&4間諜模式通知&8&m―――――――――――――――――"
     - "&c&l你是間諜 你是間諜 你是間諜"
@@ -278,9 +281,9 @@ Mole:
     - "&f你的目標是冷靜觀察判斷，找出隊伍內的間諜並將他殺掉"
     - "&f與此同時，也請務必保護好自己，不要被間諜偷襲了"
     - " "
-    - "&f傳說中在這個世界上，有一把神聖的劍叫做&c&l懲戒之劍&f，只有天選之人才能取得"
+    - "&f傳說中在這個世界上，有一把神聖的劍叫做&c&l懲戒之劍&f，只有&e&l天選之人&f才能取得"
     - "&f而且這把劍可以揭露 &b&l間諜的身分"
     - "&f不過一旦誤傷他人，將會付出&c&l慘痛的代價"
     - "&8&m――――――――――――――――――――――――――――――――――――――――――――"
-  The_Sword_Of_Punishment_Receiver_Message: "&7[&c&l間諜模式&7] &7你是懲戒之劍的持有者！請注意，這把劍&c&l只能使用一次&7，務必謹慎使用，對&4&l正確的人&7揮下正義的一刀。"
+
 

@@ -19,7 +19,6 @@ import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.remain.CompMaterial;
 
-import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -77,6 +76,8 @@ public class GameManager {
     }
 
     public static void checkMoleWin() {
+        UHCTeam winnerTeam = getWinner();
+
         Set<UHCPlayer> molePlayers = ScenarioMole.getMoleList();
 
         HashSet<UHCPlayer> players = new HashSet<>();
@@ -85,6 +86,9 @@ public class GameManager {
         }
         if (molePlayers.containsAll(players)) {
             broadcastMoleWinning();
+            Common.callEvent(new GameEndEvent());
+        } else if (UHCTeam.getAliveTeams().size() == 1 && !players.contains(molePlayers)) {
+            broadcastWinning(winnerTeam);
             Common.callEvent(new GameEndEvent());
         }
     }
@@ -104,7 +108,7 @@ public class GameManager {
         }
 
         SimpleReplacer simpleReplacer = new SimpleReplacer(Messages.Game.VICTORY_BROADCAST)
-                .replace("{winner}", "間諜")
+                .replace("{winner}", ScenarioMole.getMoleTeamName())
                 .replace("{kills}", "" + moleKills)
                 .replace("{host}", Game.getGame().getHost());
 

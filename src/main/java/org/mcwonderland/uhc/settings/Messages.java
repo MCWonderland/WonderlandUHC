@@ -229,6 +229,8 @@ public class Messages extends AutoLoadStaticConfig {
 
     public static class ChatFormat {
         public static String TEAM_CHAT;
+
+        public static String MOLE_CHAT;
         public static String SPECTATORS;
         public static String PLAYER;
         public static String STAFF;

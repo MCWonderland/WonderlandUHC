@@ -257,6 +257,7 @@ Game:
       - "&c{player}&8[&c{playerKills}&8] &7被 &c{killer}&8[&c{killerKills}&8] &7取下了首級。"
 ChatFormat:
   Team_Chat: "&7[&a&l隊伍聊天&7] &a{player}: {msg}"
+  Mole_Chat: "&c間諜頻道 &f-> &e{player}&f: {msg}"
   Player: "&7[&b玩家&7] &a{player}&f: {msg}"
   Spectators: "&7[觀戰者] {player}: {msg}"
   Staff: "&c&l[管理員] &e&l{player}: {msg}"
