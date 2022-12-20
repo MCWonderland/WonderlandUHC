@@ -1,5 +1,6 @@
 package org.mcwonderland.uhc.command.scenarioMole;
 
+import org.mcwonderland.uhc.api.enums.RoleName;
 import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.game.player.UHCPlayers;
@@ -28,11 +29,8 @@ public class MoleListCommand extends SimpleSubCommand {
 
         CommandHelper.checkGameStarted();
 
-        if (ScenarioMole.getMoleList().contains(player))
-            for (UHCPlayer uhcPlayer : UHCPlayer.getAllPlayers()) {
-                if (ScenarioMole.getMoleList().contains(uhcPlayer) && uhcPlayer.isAlive())
-                    Chat.send(uhcPlayer.getPlayer(), showMoleList());
-            }
+        if (ScenarioMole.getMoleList().contains(player) || player.getRoleName() == RoleName.STAFF)
+            Chat.send(getSender(), showMoleList());
         else
             Chat.send(getSender(), ScenarioMole.getMoleCommandDeniedMessage());
     }

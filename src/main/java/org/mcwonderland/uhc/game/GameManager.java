@@ -101,7 +101,7 @@ public class GameManager {
     }
 
     private static List<String> getMoleWinningMsg() {
-         int moleKills = 0;
+        int moleKills = 0;
 
         for (UHCPlayer player : ScenarioMole.getMoleList()) {
             moleKills += player.getKills();
@@ -150,7 +150,8 @@ public class GameManager {
             if (s.contains("{players}")) {
                 list.remove(s);
                 for (String name : UHCPlayers.toNames(winner.getPlayers())) {
-                    list.add(i, s.replace("{players}", name));
+                    if (!ScenarioMole.getMoleNames().contains(name))
+                        list.add(i, s.replace("{players}", name));
                 }
             }
         }
