@@ -6,6 +6,10 @@ plugins {
 group = 'me.lulu'
 version = '1.0.0-alpha-2'
 
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
 compileJava {
     sourceCompatibility = 8
     targetCompatibility = 8
