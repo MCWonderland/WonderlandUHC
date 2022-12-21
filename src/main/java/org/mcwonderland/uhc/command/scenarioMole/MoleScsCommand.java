@@ -2,6 +2,7 @@ package org.mcwonderland.uhc.command.scenarioMole;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.mcwonderland.uhc.command.CommandHelper;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.scenario.impl.special.ScenarioMole;
 import org.mcwonderland.uhc.settings.CommandSettings;
@@ -24,6 +25,8 @@ public class MoleScsCommand extends SimpleSubCommand {
     protected void onCommand() {
         UHCPlayer player = UHCPlayer.getUHCPlayer(getPlayer());
 
+        CommandHelper.checkGameStarted();
+
         if (ScenarioMole.getMoleList().contains(player) && player.isAlive())
             sendCoords();
         else
@@ -35,7 +38,7 @@ public class MoleScsCommand extends SimpleSubCommand {
         Location location = player.getLocation();
 
         for (UHCPlayer uhcPlayer : ScenarioMole.getMoleList()) {
-            Chat.send(uhcPlayer.getPlayer(), new SimpleReplacer(CommandSettings.Mole.Scs)
+            Chat.send(uhcPlayer.getPlayer(), new SimpleReplacer(CommandSettings.Mole.SCS)
                             .replace("{player}", player.getName())
                             .replace("{x}", location.getBlockX())
                             .replace("{y}", location.getBlockY())

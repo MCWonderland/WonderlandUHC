@@ -1,14 +1,14 @@
 package org.mcwonderland.uhc.scenario.impl.special;
 
 import com.google.common.collect.Sets;
-import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
-import org.bukkit.Location;
-import org.bukkit.World;
+import org.bukkit.*;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -20,15 +20,13 @@ import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.scenario.ScenarioName;
 import org.mcwonderland.uhc.scenario.annotation.FilePath;
 import org.mcwonderland.uhc.scenario.impl.ConfigBasedScenario;
+import org.mcwonderland.uhc.settings.CommandSettings;
 import org.mcwonderland.uhc.util.Chat;
 import org.mcwonderland.uhc.util.Extra;
 import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.model.SimpleSound;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 import static org.bukkit.Material.STONE_SWORD;
 
@@ -167,6 +165,7 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
 
         swordMeta.setDisplayName(ChatColor.RED + "懲戒之劍");
         swordMeta.setLore(swordLore);
+        swordMeta.addEnchant(Enchantment.DAMAGE_ALL, 5, false);
 
         sword.setItemMeta(swordMeta);
 
@@ -260,7 +259,90 @@ public class ScenarioMole extends ConfigBasedScenario implements Listener {
                 break;
         }
         item.setItemMeta(itemMeta);
+
     }
+
+    public static void chooseKit(Inventory kitSelector, Player player) {
+        // Engineer
+        ItemStack engineer = new ItemStack(Material.TNT);
+        ItemMeta engMeta = engineer.getItemMeta();
+        engMeta.setDisplayName(ChatColor.AQUA + "工程師");
+        engMeta.setLore(Arrays.asList(ChatColor.WHITE + "活塞x20, 黏性活塞x20, 紅石火把x16, 陷阱箱x6, 漏斗x10, 紅石磚x10, 絆線鉤x10, TNTx10"));
+        engineer.setItemMeta(engMeta);
+        kitSelector.setItem(0, engineer);
+
+        // Scout
+        ItemStack scout = new ItemStack(Material.FEATHER);
+        ItemMeta scoutMeta = scout.getItemMeta();
+        scoutMeta.setDisplayName(ChatColor.AQUA + "偵查兵");
+        scoutMeta.setLore(Arrays.asList(ChatColor.WHITE + "永久速度I"));
+        scout.setItemMeta(scoutMeta);
+        kitSelector.setItem(1, scout);
+
+        // Phoenix
+        ItemStack phoenix = new ItemStack(Material.GOLDEN_CARROT);
+        ItemMeta phoenixMeta = phoenix.getItemMeta();
+        phoenixMeta.setDisplayName(ChatColor.AQUA + "不死鳳凰");
+        phoenixMeta.setLore(Arrays.asList(ChatColor.GOLD.toString() + ChatColor.BOLD + "特殊" + ChatColor.WHITE + "胡蘿蔔x1 " + ChatColor.GRAY + "(吃了會獲得 吸收9(60顆愛心) 90秒)"));
+        phoenix.setItemMeta(phoenixMeta);
+        kitSelector.setItem(2, phoenix);
+
+        // Teleporter
+        ItemStack teleport = new ItemStack(Material.ENDER_PEARL);
+        ItemMeta teleportMeta = teleport.getItemMeta();
+        teleportMeta.setDisplayName(ChatColor.AQUA + "傳送者");
+        teleportMeta.setLore(Arrays.asList(ChatColor.WHITE + "終界珍珠x16"));
+        teleport.setItemMeta(teleportMeta);
+        kitSelector.setItem(3, teleport);
+
+
+        player.openInventory(kitSelector);
+    }
+
+    @EventHandler
+    public void onClick(InventoryClickEvent e) {
+        Chat.broadcast("asdasdasda");
+//        if (e.getClickedInventory() == kitSelector && e.getCurrentItem() != null) {
+//            e.setCancelled(true);
+//
+//            switch (e.getSlot()) {
+//                case 0:
+//                    giveKitEngineer(player);
+//                    break;
+//                case 1:
+//                    giveKitScout(player);
+//                    break;
+//                case 2:
+//                    giveKitPhoenix(player);
+//                    break;
+//                case 3:
+//                    giveKitTeleporter(player);
+//                    break;
+//                default:
+//                    return;
+//            }
+//
+//            e.getWhoClicked().closeInventory();
+//        }
+    }
+
+    public void giveKitEngineer(Player player) {
+        Chat.send(player, new SimpleReplacer(CommandSettings.Mole.KIT_RECEIVED).replace("{kit}", "工程師").getMessages());
+    }
+
+    public void giveKitScout(Player player) {
+        Chat.send(player, new SimpleReplacer(CommandSettings.Mole.KIT_RECEIVED).replace("{kit}", "偵查兵").getMessages());
+    }
+
+    public void giveKitPhoenix(Player player) {
+        Chat.send(player, new SimpleReplacer(CommandSettings.Mole.KIT_RECEIVED).replace("{kit}", "不死鳳凰").getMessages());
+    }
+
+    public void giveKitTeleporter(Player player) {
+        Chat.send(player, new SimpleReplacer(CommandSettings.Mole.KIT_RECEIVED).replace("{kit}", "傳送者").getMessages());
+    }
+
+
 }
 
 

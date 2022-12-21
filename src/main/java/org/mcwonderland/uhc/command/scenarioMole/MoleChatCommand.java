@@ -14,6 +14,7 @@ public class MoleChatCommand extends SimpleSubCommand {
         super(parent, sublabel);
 
         setUsage("[訊息]");
+        setMinArguments(1);
         setDescription("對間諜們發送訊息");
         setPermission(null);
     }

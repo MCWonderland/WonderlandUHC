@@ -36,7 +36,7 @@ public class MoleListCommand extends SimpleSubCommand {
     }
 
     private List<String> showMoleList() {
-        SimpleReplacer simpleReplacer = new SimpleReplacer(CommandSettings.Mole.List);
+        SimpleReplacer simpleReplacer = new SimpleReplacer(CommandSettings.Mole.LIST);
 
         List<String> list = simpleReplacer.buildList();
 

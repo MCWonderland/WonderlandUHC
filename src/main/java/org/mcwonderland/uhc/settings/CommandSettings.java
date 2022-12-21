@@ -130,7 +130,8 @@ public class CommandSettings extends AutoLoadStaticConfig {
     }
 
     public static class Mole {
-        public static String Scs;
-        public static List<String> List;
+        public static String SCS;
+        public static String KIT_RECEIVED;
+        public static List<String> LIST;
     }
 }
