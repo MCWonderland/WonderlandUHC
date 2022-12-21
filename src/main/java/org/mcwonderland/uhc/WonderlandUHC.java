@@ -5,6 +5,9 @@ import lombok.Getter;
 import lombok.SneakyThrows;
 import me.lulu.datounms.DaTouNMS;
 import me.lulu.datounms.UnSupportedNmsException;
+import org.bukkit.Bukkit;
+import org.bukkit.World;
+import org.bukkit.WorldCreator;
 import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPluginLoader;
 import org.jetbrains.annotations.NotNull;
@@ -48,9 +51,6 @@ import org.mcwonderland.uhc.stats.storages.StatsStorage;
 import org.mcwonderland.uhc.stats.storages.StatsStorageSql;
 import org.mcwonderland.uhc.stats.storages.StatsStorageYaml;
 import org.mcwonderland.uhc.util.*;
-import org.bukkit.Bukkit;
-import org.bukkit.World;
-import org.bukkit.WorldCreator;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.FileUtil;
 import org.mineacademy.fo.MinecraftVersion;
@@ -235,6 +235,7 @@ public class WonderlandUHC extends SimplePlugin {
                 new WorldInitListener(),
                 new ScoreListener(),
                 new ScenarioListener(this)
+//                new MoleKitCommand(new MoleCommandGroup("mole"), "kit")
         ).forEach(this::registerEvents);
     }
 
