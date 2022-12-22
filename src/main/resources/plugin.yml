@@ -1,0 +1,103 @@
+main: org.mcwonderland.uhc.WonderlandUHC
+name: WonderlandUHC
+version: ${pluginVersion}
+author: LU__LU
+softdepend: [ WorldBorder, PacketListenerApi, DiscordSRV, custom-ore-generator ]
+api-version: 1.13
+
+permissions:
+  wonderland.uhc.admin:
+    children:
+      wonderland.uhc.host: true
+      wonderland.uhc.command.uhc.reload: true
+
+  wonderland.uhc.host:
+    children:
+      wonderland.uhc.bypass.join.configuring: true
+      wonderland.uhc.item.settings: true
+      wonderland.uhc.moderator: true
+      wonderland.uhc.command.border: true
+      wonderland.uhc.command.mlg: true
+      wonderland.uhc.command.uhc.choose: true
+      wonderland.uhc.command.uhc.splitteam: true
+      wonderland.uhc.command.uhc.resetteam: true
+      wonderland.uhc.command.uhc.switchteam: true
+      wonderland.uhc.command.uhc.tutorial: true
+      wonderland.uhc.command.uhc.edit: true
+      wonderland.uhc.command.uhc.sethost: true
+      wonderland.uhc.command.uhc.stop: true
+      wonderland.uhc.command.uhc.tp: true
+      wonderland.uhc.command.uhc.regen: true
+      wonderland.uhc.command.uhc.start: true
+      wonderland.uhc.command.whitelist: true
+      wonderland.uhc.command.setspawn: true
+      wonderland.uhc.host.seebackpack: true
+      wonderland.uhc.host.practiceother: true
+
+  wonderland.uhc.moderator:
+    children:
+      wonderland.uhc.bypass.join.full: true
+      wonderland.uhc.bypass.join.started: true
+      wonderland.uhc.bypass.join.whitelist: true
+      wonderland.uhc.command.staff: true
+      wonderland.uhc.command.giveall: true
+      wonderland.uhc.seespectatorchat: true
+
+  wonderland.uhc.bypass.kick.death:
+    default: true
+
+  wonderland.uhc.command.backpack:
+    default: true
+  wonderland.uhc.command.config:
+    default: true
+  wonderland.uhc.command.leave:
+    default: true
+  wonderland.uhc.command.scenarios:
+    default: true
+  wonderland.uhc.command.disableitems:
+    default: true
+  wonderland.uhc.command.sendcoords:
+    default: true
+  wonderland.uhc.command.spectoggle:
+    default: true
+  wonderland.uhc.command.stats:
+    default: true
+  wonderland.uhc.command.topkills:
+    default: true
+  wonderland.uhc.command.viewheal:
+    default: true
+  wonderland.uhc.command.practice:
+    default: true
+
+  wonderland.uhc.command.uhc.spectoggle:
+    default: true
+
+  wonderland.uhc.command.team.chat:
+    default: true
+  wonderland.uhc.command.team.create:
+    default: true
+  wonderland.uhc.command.team.disband:
+    default: true
+  wonderland.uhc.command.team.invite:
+    default: true
+  wonderland.uhc.command.team.join:
+    default: true
+  wonderland.uhc.command.team.kick:
+    default: true
+  wonderland.uhc.command.team.leave:
+    default: true
+  wonderland.uhc.command.team.list:
+    default: true
+  wonderland.uhc.command.team.promote:
+    default: true
+  wonderland.uhc.command.team.public:
+    default: true
+  wonderland.uhc.command.team.settings:
+    default: true
+
+  wonderland.uhc.team.settings.name:
+    default: op
+  wonderland.uhc.team.settings.character:
+    default: op
+  wonderland.uhc.team.settings.color:
+    default: op

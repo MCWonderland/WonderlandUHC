@@ -1,0 +1,261 @@
+#記分板方面你可以自行更改所有的風格
+#目前下方共有預設的三種風格，而你也可以自己新增其他樣式，如同文件最下方的註解一般。
+
+#以下為所有記分板的代轉換字元
+# Lobby 方面:
+  # {ign} 每個玩家各自的名子
+  # {online_players} 伺服器玩家總數
+  # {teleport_in} 傳送倒數時間
+  # {team_size} 隊伍大小
+  # {max_players} 玩家數量限制
+# Starting 方面:
+  # 包含所有Lobby方面的代轉換字元
+  # {start_in} 遊戲開始倒數時間
+  # {teleporting} 傳送完成的玩家數量
+  # {teleported} 已傳送玩家數量
+# Spectator_Solo、Spectator_Teams 方面:
+  # {ign} 每個玩家各自的名子
+  # {remaining} 存活玩家數量
+  # {all} 本場遊玩玩家數量
+  # {alive_teams} 存活隊伍數量
+  # {all_teams} 本場總隊伍數量
+  # {spectators} 觀察者數量
+  # {border_size} 邊界大小(直徑)
+  # {shrink_in} 邊界收縮倒數時間
+  # {game_time} 遊戲時間
+# Staff_Solo、Staff_Teams 方面:
+  # 包含所有Spectator_Solo方面的代轉換字元
+  # {tps} 伺服器順暢程度(最高20)
+  # {free_ram} 伺服器記憶體使用量
+# Player_Solo 方面:
+  # 包含所有 Spectator_Solo 方面的代轉換字元
+  # {kills} 玩家擊殺數
+# Player_Teams 方面:
+  # 包含所有Player_Solo方面方面的代轉換字元
+  # {team_kills} 隊伍擊殺數
+  # {team_name} 隊伍名稱
+  # {team_color} 隊伍顏色(顏色代碼)
+Default:
+  Lobby:
+    - "&7&m*----------------------*"
+    - "&f玩家數量: &a{online_players}/{max_players}"
+    - "&f隊伍大小: &a{team_size} 人一隊"
+    - "    "
+    - "&f將於 &a{teleport_in} &f後傳送玩家"
+    - "&7&m*----------------------*"
+  Starting:
+    - "&7&m*----------------------*"
+    - "&f遊戲倒數: &a{start_in}"
+    - "&f "
+    - "&f已傳送: &a{teleported}"
+    - "&f未傳送: &a{teleporting}"
+    - "&7&m*----------------------*"
+  Spectator_Solo:
+    - "&7&m*----------------------*"
+    - "&f時間: &a{game_time}"
+    - "&f玩家: &a{remaining}/{all}"
+    - " "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+  Spectator_Teams:
+    - "&7&m*----------------------*"
+    - "&f時間: &a{game_time}"
+    - "&f玩家: &a{remaining}/{all}"
+    - " "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+  Staff_Solo:
+    - "&7&m*----------------------*"
+    - "&f順暢度&7(TPS)&f: &a{tps}"
+    - "&f記憶體&7(RAM)&f: &a{free_ram}"
+    - "&7&m*----------------------*"
+    - "&f時間: &a{game_time}"
+    - "&f玩家: &a{remaining}/{all}"
+    - " "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+  Staff_Teams:
+    - "&7&m*----------------------*"
+    - "&f順暢度&7(TPS)&f: &a{tps}"
+    - "&f記憶體&7(RAM)&f: &a{free_ram}"
+    - "&7&m*----------------------*"
+    - "&f時間: &a{game_time}"
+    - "&f玩家: &a{remaining}/{all}"
+    - " "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+  Player_Solo:
+    - "&7&m*----------------------*"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f玩家數量: &a{remaining}/{all}"
+    - "  "
+    - "&f擊殺數: &a{kills}"
+    - " "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+  Player_Teams:
+    - "&7&m*----------------------*"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f玩家數量: &a{remaining}/{all}"
+    - "&f隊伍數量: &a{alive_teams}/{all_teams}"
+    - "  "
+    - "&f擊殺數: &a{kills}"
+    - "&f隊伍擊殺數: &a{team_kills}"
+    - "  "
+    - "&f邊界大小: &a{border_size}x{border_size}"
+    - "&f收縮倒數: &a{shrink_in}"
+    - "&7&m*----------------------*"
+Ultra:
+  Lobby:
+    - "&f&m---------------------"
+    - "&f玩家數量: &a{online_players}"
+    - "&f主持人: &a{host}"
+    - " "
+    - "&f遊戲模式: &a{team_size} 人一隊"
+    - " "
+    - "&f將於 &a{teleport_in} &f後開始傳送"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+  Starting:
+    - "&f&m---------------------"
+    - "&f傳送玩家中...."
+    - " "
+    - "&f將於 &a{start_in} &f後開始"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+  Spectator_Solo:
+    - "&f&m---------------------"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f邊界: &a{border_size}"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+  Spectator_Teams:
+    - "&f&m---------------------"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f邊界: &a{border_size}"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+  Staff_Solo:
+    - "&7&m*----------------------*"
+    - "&f順暢度&7(TPS)&f: &a{tps}"
+    - "&f記憶體&7(RAM)&f: &a{free_ram}"
+    - "&7&m*----------------------*"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f邊界: &a{border_size}"
+    - "&7&m*----------------------*"
+  Staff_Teams:
+    - "&7&m*----------------------*"
+    - "&f順暢度&7(TPS)&f: &a{tps}"
+    - "&f記憶體&7(RAM)&f: &a{free_ram}"
+    - "&7&m*----------------------*"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f邊界: &a{border_size}"
+    - "&7&m*----------------------*"
+  Player_Solo:
+    - "&f&m---------------------"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f擊殺數: &a{kills}"
+    - "&f邊界: &a{border_size}"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+  Player_Teams:
+    - "&f&m---------------------"
+    - "&f遊戲時間: &a{game_time}"
+    - "&f存活玩家: &a{remaining}/{all}"
+    - "&f擊殺數: &a{kills}"
+    - "&f隊伍擊殺數: &a{team_kills}"
+    - "&f邊界: &a{border_size}"
+    - "&f&m---------------------"
+    - "&aYourIP.net"
+#自訂義記分板模式 (拿掉「#」即可使用)
+#Badlion:
+#  Lobby:
+#    - " "
+#    - "&a玩家數量: &f{online_players}"
+#    - "&a主持人: &c{host}"
+#    - " "
+#    - "&a隊伍數量: &f{team_size}"
+#    - " "
+#    - "&a傳送倒數: &a{teleport_in}"
+#    - " "
+#    - "&aYourIP.net"
+#  Starting:
+#    - "&a傳送玩家中..."
+#    - " "
+#    - "&a遊戲開始倒數: &e{start_in}"
+#    - " "
+#    - "&aYourIP.net"
+#  Spectator_Solo:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&aYourIP.net"
+#  Spectator_Teams:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a隊伍數量: &f{alive_teams}"
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&aYourIP.net"
+#  Staff_Solo:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&a順暢度&7(TPS)&f: &f{tps}"
+#    - "&a記憶體&7(RAM)&f: &f{free_ram}"
+#    - " "
+#    - "&aYourIP.net"
+#  Staff_Teams:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a隊伍數量: &f{alive_teams}"
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&a順暢度&7(TPS)&f: &f{tps}"
+#    - "&a記憶體&7(RAM)&f: &f{free_ram}"
+#    - " "
+#    - "&aYourIP.net"
+#  Player_Solo:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a擊殺數: &f{kills}"
+#    - " "
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - " "
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&aYourIP.net"
+#  Player_Teams:
+#    - "&a遊戲時間: &f{game_time}"
+#    - " "
+#    - "&a個人擊殺數: &f{kills}"
+#    - "&a隊伍擊殺數: &f{team_kills}"
+#    - " "
+#    - "&a隊伍數量: &f{alive_teams}"
+#    - "&a存活玩家: &f{remaining}"
+#    - "&a觀察者: &f{spectators}"
+#    - " "
+#    - "&a邊界大小: &f{border_size}"
+#    - " "
+#    - "&aYourIP.net"

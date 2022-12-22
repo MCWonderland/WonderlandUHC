@@ -1,0 +1,165 @@
+No_Console: "&c不好意思，只有玩家才能執行此指令。"
+Cooldown_Wait: "&c請稍等 {time} 秒後再使用這個指令。"
+Invalid_Argument: "&c無法辨識的指令參數，請輸入 &6/{label} ? &c來獲得指令參數列表。"
+Invalid_Sub_Argument: "&c無法辨識的指令參數，請輸入 '/{label} {0}' 來獲得參數使用方次。"
+Invalid_Argument_Multiline: "&c無法辨識的指令參數，以下為協助資訊:"
+Label_Description: "&c說明: {description}。"
+Label_Usage: "&c使用方式:"
+Label_Usages: "&c使用方式:"
+Reload_Success: "&a{plugin_name} {plugin_version} &f已重新載入。"
+Reload_Fail: "&c插件在載入過程中發生了錯誤，請查看後台獲取詳細資訊，錯誤類型為: {error}。"
+Cant_Execute_Self: "&c你無法對自己執行此操作。"
+
+Uhc:
+  Choose:
+    Kick_Init_Msg:
+      - " "
+      - "&7[&aWonderland&fUHC&7]"
+      - "&7世界已開始生成，"
+      - "&7請稍待世界載入完畢後再加入伺服器。"
+      - " "
+  SetHost:
+    Host_Changed: "&7主持人已被設定為 {name}"
+  Regen:
+    Creating_World:
+      - " "
+      - "&a預覽世界已經開始載入，當載入完畢後便會將你傳送至該世界。"
+      - " "
+      - "&7覺得中心點是漂亮的，可使用 &a/uhc choose &7來確認並開始正式載入；"
+      - "&7如果世界不好看，則請使用 &6/uhc regen &7來重新載入世界。"
+      - " "
+  SpecToggle:
+    Only_For_Default_Spectate_Mode: "&7[&3觀戰系統&7] &c此功能無法在此觀戰模式下使用。"
+    Gamemode_Toggled: "&7[&3觀戰系統&7] 已切換觀戰模式，請使用 &e/{cmd} &7可再切換成另一種。"
+
+Whitelist:
+  Added: "&7[&b白名單&7] &f{op} &7已將 &a{player} &7添加到白名單中。"
+  Already_Added: "&7[&b白名單&7] &f{player} &c已經在白單中。"
+  Name_Required: "&7[&b白名單&7] &c請輸入要增加或移除的玩家名稱。"
+  Removed: "&7[&b白名單&7] &f{op} &7將 &c{player} &7從名單中移除。"
+  Already_Removed: "&7[&b白名單&7] &f{player} &c不在白名單中。"
+  Cleared: "&7[&b白名單&7] &f{player} &c清除了白名單。"
+  List:
+    - "&7&m―――――――――――― &b&l白名單列表 &7&m――――――――――――"
+    - "&7  - &b{players}"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+
+GiveAll:
+  Invalid_Item: "&c系統找不到名為 {item} 的物品，請重新輸入。"
+  Invalid_Amount: "&c物品數量無效，請重新輸入。"
+  Given: "&a管理員已給予所有玩家 &f{amount} &a個 &f{material}。"
+
+Border:
+  Only_Number_Between: "&c請輸入介於 &f{min} 至 {max} &c之間的數字。"
+  Only_In_Timer_Mode: "&c抱歉，只有當邊界為&f&l瞬縮系統&c時，才能使用此功能。"
+
+Respawn:
+  Is_Playing: "&c此玩家目前正在遊玩中，因此不需要復活。"
+  Broadcast: "&f{mod} &a使用了神之掌復活了 &f{player}。"
+  Respawned:
+    - "&f&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&a&l生命延續，薪火相傳"
+    - " "
+    - "&b你獲得了能夠繼續遊玩的機會"
+    - "&b祝福你越戰越強，戰到最後。"
+    - "&f&m――――――――――――――――――――――――――――――――――――――――――――"
+
+SetSpawn:
+  Spawn_Saved: "&a成功儲存大廳重生點。"
+
+Heal:
+  Format: "&a{player} &f還剩下 &c{heal}❤"
+
+SendCoords:
+  Format: "&a[&b玩家座標&a] > &b{player} &b&l> &aX: &f{x} &aY: &f{y} &aZ: &f{z}"
+
+Team:
+  Already_Has_One: "&c你已經在一個隊伍中，麻煩先離開當前隊伍後再嘗試使用此功能。"
+  Player_Not_In_Team: "&c此玩家並不在你的隊伍當中，因此無法使用此功能。"
+  Not_Owner: "&c此功能只有隊長才能使用。"
+  Player_Has_No_Team: "&c此玩家不屬於任何隊伍，因此這個操作無法成功執行。"
+  You_Dont_Have_Team: "&c你並不附屬於任何隊伍中，因此無法使用此功能。"
+  Create:
+    Created:
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+      - "&a已成功創建隊伍！"
+      - "&f輸入 &a/{cmd} &f即可獲得所有相關指令的說明及使用方式。"
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+  Invite:
+    Already_In_Your_Team: "&c此玩家已在你的隊伍當中。"
+    Invited:
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+      - "&a{player} &f已向 &a{target} &f發送邀請，目前正等待該玩家回覆。"
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+    Invitation_Messages:
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+      - "&a{player} &f邀請你加入他的隊伍"
+      - "&f若同意請 &6&l[{click-join}]"
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+    Click_Here: "&6&l點擊這裡來接受"
+  Join:
+    No_Invitation: "&c你並未收到此隊伍的邀請，因此無法加入。"
+  Kick:
+    Kicked:
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+      - "&c{player} &f已被踢出隊伍。"
+      - "&7&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+  Chat:
+    Cant_Use: "&7[&a&l隊伍聊天&7] &c你目前暫時無法使用隊伍聊天功能。"
+    Joined: "&7[&a&l隊伍聊天&7] 你&a加入&7了隊伍聊天頻道，使用 &a/{cmd} &7即可離開。"
+    Quitted: "&7[&a&l隊伍聊天&7] 你&c離開&7了隊伍聊天頻道，使用 &c/{cmd} &7即可重新加入。"
+
+Config:
+  Messages:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&f主持人: &7{host}"
+    - "&f模式: &7{team-size} 人一隊"
+    - " "
+    - "&a同隊傷害: &7{friendly-fire}"
+    - "&a無敵時間: &7{invisible-time}"
+    - "&a最終回血: &7{finalheal-time}"
+    - "&aPvP開啟時間: &7{pvp-time}"
+    - "&a邊界第一次收縮: &7{firstborder-time}"
+    - "&a地獄關閉時間: &7{disable-nether-time}"
+    - " "
+    - "&e邊界大小: &7{border-size}"
+    - "&e蘋果掉落機率: &7{apple-rate}"
+    - "&e地獄: &7{nether-on}"
+    - "&e初始經驗: &7{start-level}"
+    - " "
+    - "&7想瞭解特殊模式請使用 &a/scenarios"
+    - "&7想瞭解禁止使用的物品請使用 &a/disableitems"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+
+#你可以依照你的需求自己增加行數
+#例如我想要排行榜排出前十名，那麼我就用10行
+TopKills:
+  Messages:
+    - "&7&m――――――――――― &4&l擊殺數排行榜 &7&m―――――――――――"
+    - "  &c第&b{number}&c名 -  &c{player}&f: &c{kills}殺"
+    - "  &6第&b{number}&6名 -  &6{player}&f: &6{kills}殺"
+    - "  &e第&b{number}&e名 -  &e{player}&f: &e{kills}殺"
+    - "  &f第&b{number}&f名 -  &f{player}&f: &f{kills}殺"
+    - "  &f第&b{number}&f名 -  &f{player}&f: &f{kills}殺"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+
+TeamList:
+  Messages:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&a&l隊伍: {color}[{character}] {teamname}"
+    - " "
+    - "&a&l存活玩家:"
+    - "    &6&l-&a{playeralive} &c{heal}&4&l❤"
+    - "&c&l死亡玩家:"
+    - "    &6&l- &c{playerdeath}"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+
+Mole:
+  Scs: "&c間諜 &e{player} &c的座標: &e{x}, {y}, {z}"
+  Kit_Received: "&7[&c&l間諜模式&7] &7你選取了 {kit}!"
+  Kit_Twice: "&7[&c&l間諜模式&7] &c你只能選一次職業!"
+  List:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&c間諜名單:"
+    - "  &e{molePlayers}"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"

@@ -1,0 +1,53 @@
+#你可以創建無限種生成模式，就如同文件最下方的註解一般。
+Normal:
+  Icon: STONE
+  Fancy_Name: "&e普通世界"
+  Description:
+    - "&7與平常世界生成無太大差別。"
+  Ores: []
+Run:
+  Icon: DIAMOND_ORE
+  Fancy_Name: "&6豐盛世界"
+  Description:
+    - "&7此模式將會生成更多的礦物。"
+  #你可以自由新增其他種的礦物生成，就如同下方註解一般。(請務必注意格式與空格，否則可能會有無法預知的問題)
+  Ores:
+    - Material: GOLD_ORE
+      Use: true
+      Max_Vein_Size: 9
+      Veins_Per_Chunk: 10
+      Max_Y: 64
+      Min_Y: 0
+    - Material: DIAMOND_ORE
+      Use: true
+      Max_Vein_Size: 8
+      Veins_Per_Chunk: 8
+      Max_Y: 32
+      Min_Y: 0
+    - Material: LAPIS_ORE
+      Use: true
+      Max_Vein_Size: 8
+      Veins_Per_Chunk: 5
+      Max_Y: 32
+      Min_Y: 0
+#     自訂義礦物(拿掉「#」即可使用)
+#    - Material: COAL_ORE
+#      Use: true
+#      Max_Vein_Size: 8
+#      Veins_Per_Chunk: 5
+#      Max_Y: 32
+#      Min_Y: 0
+
+#自訂義生成器(拿掉「#」即可使用)
+#DaTou:
+#  Icon: REDSTONE_ORE
+#  Fancy_Name: "&c紅色世界"
+#  Description:
+#    - "&7這個世界有著許多紅石。"
+#  Ores:
+#    - Material: REDSTONE_ORE
+#      Use: true
+#      Max_Vein_Size: 100
+#      Veins_Per_Chunk: 20
+#      Max_Y: 90
+#      Min_Y: 0

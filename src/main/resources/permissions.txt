@@ -1,0 +1,60 @@
+wonderland.uhc.admin
+包含
+  wonderland.uhc.host
+  wonderland.uhc.command.uhc.reload #使用 uhc reload 指令 (以下類似的權限都是相近意思，wonderland.uhc.command.xxx -> 使用 xxx 指令，以此類推)
+
+wonderland.uhc.host
+包含以下權限
+  wonderland.uhc.bypass.join.configuring #無視白名單
+  wonderland.uhc.item.settings #獲得能開起設定介面的物品
+  wonderland.uhc.moderator
+  wonderland.uhc.command.border
+  wonderland.uhc.command.mlg
+  wonderland.uhc.command.uhc.switchteam
+  wonderland.uhc.command.uhc.splitteam
+  wonderland.uhc.command.uhc.resetteam
+  wonderland.uhc.command.uhc.tutorial
+  wonderland.uhc.command.uhc.edit
+  wonderland.uhc.command.uhc.sethost
+  wonderland.uhc.command.uhc.stop
+  wonderland.uhc.command.uhc.tp
+  wonderland.uhc.command.whitelist
+
+wonderland.uhc.moderator
+包含以下權限
+  wonderland.uhc.bypass.join.full #滿人時依然可加入遊戲
+  wonderland.uhc.bypass.join.started #於遊戲開始後加入遊戲
+  wonderland.uhc.bypass.join.whitelist #無視白名單
+  wonderland.uhc.command.staff
+  wonderland.uhc.seespectatorchat #能看到觀戰者的訊息
+
+wonderland.uhc.command.backpack
+wonderland.uhc.command.config
+wonderland.uhc.command.leave
+wonderland.uhc.command.scenarios
+wonderland.uhc.command.disableitems
+wonderland.uhc.command.sendcoords
+wonderland.uhc.command.spectoggle
+wonderland.uhc.command.stats
+wonderland.uhc.command.topkills
+wonderland.uhc.command.viewheal
+wonderland.uhc.command.uhc.spectoggle
+wonderland.uhc.command.team.chat
+wonderland.uhc.command.team.create
+wonderland.uhc.command.team.disband
+wonderland.uhc.command.team.invite
+wonderland.uhc.command.team.join
+wonderland.uhc.command.team.kick
+wonderland.uhc.command.team.leave
+wonderland.uhc.command.team.list
+wonderland.uhc.command.team.promote
+wonderland.uhc.command.team.public
+wonderland.uhc.command.team.settings
+
+wonderland.uhc.bypass.kick.death #不會於死亡後被系統剔除
+
+wonderland.uhc.team.settings.name #更換隊伍名稱
+wonderland.uhc.team.settings.character #更換隊伍徽章
+wonderland.uhc.team.settings.color #更換隊伍顏色
+
+wonderland.uhc.spectator.chat.global #即使是觀戰者，發送的訊息大家也依然看得到

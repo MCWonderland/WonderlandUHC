@@ -1,0 +1,61 @@
+name: "Build And Publish Release"
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: corretto
+          java-version: 8
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 6.9
+
+      - name: Execute Gradle build
+        run: gradle shadowJar
+        env:
+          PRIVATE_REPO_USERNAME: ${{ secrets.PRIVATE_REPO_USERNAME }}
+          PRIVATE_REPO_PASSWORD: ${{ secrets.PRIVATE_REPO_PASSWORD }}
+
+      - name: Get Plugin Version From build.gradle And Store It
+        run: echo "RELEASE_VERSION=$(gradle properties -q | grep "version:" | awk '{print $2}')" >> $GITHUB_ENV
+
+      - name: Create Draft Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ env.RELEASE_VERSION }}
+          release_name: ${{ env.RELEASE_VERSION }}
+          draft: true
+          prerelease: false
+
+      - name: Find Output Jar Path And Store As Env
+        run: echo "RELEASE_JAR_PATH=$(find ./build/libs -type f -name '*.jar')" >> $GITHUB_ENV
+
+      - name: Store Jar Name As Env
+        run: echo "RELEASE_JAR_NAME=$(basename $RELEASE_JAR_PATH)" >> $GITHUB_ENV
+
+      - uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{ env.RELEASE_JAR_PATH }}
+          asset_name: ${{ env.RELEASE_JAR_NAME }}
+          asset_content_type: application/zip
+
+      - uses: eregon/publish-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          release_id: ${{ steps.create_release.outputs.id }}

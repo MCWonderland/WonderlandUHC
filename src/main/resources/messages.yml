@@ -1,0 +1,357 @@
+No_Permission: "&c抱歉，你沒有權限使用此功能。"
+Error: "&8&l[&4&l!&8&l] &c此操作在運行時發生了錯誤，請查看後台獲取詳細錯誤訊息。"
+Not_Yet_Started: "&c由於遊戲尚未開始，因此你無法使用此功能。"
+Use_Only_While_Waiting: "&c此指令只能於大廳等待時使用。"
+Not_Gaming_Player: "&c由於你並非遊戲玩家，因此無法使用此功能。"
+Only_For_Spectator: "&c此功能只限定觀戰使用。"
+Enabled: "&a&m--&a開啟&a&m--"
+Disabled: "&c&m--&c關閉&c&m--"
+
+Host:
+  Whitelist_On: "&7[&b白名單&7] &a{player} &a開啟&7了白名單。"
+  Whitelist_Off: "&7[&b白名單&7] &a{player} &c關閉&7了白名單。"
+  Scenario_Enabled_Player: "&7[&d特殊模式&7] &a{player} &7開啟了 &a{scenario}&7。"
+  Scenario_Disabled_Player: "&7[&d特殊模式&7] &a{player} &7關閉了 &a{scenario}&7。"
+  Nether_Enabled_Player: "&7[&c地獄&7] &a{player} &a開啟&7了地獄。"
+  Nether_Disabled_Player: "&7[&c地獄&7] &a{player} &c關閉&7了地獄。"
+  Team_Fire_Enabled_Player: "&7[&b隊伍&7] &a{player} &a開啟&7了同隊傷害。"
+  Team_Fire_Disabled_Player: "&7[&b隊伍&7] &a{player} &c關閉&7了同隊傷害。"
+  Border_Type_Changed: "&7[&2邊界&7] &a{player} &7將邊界模式切換為 &a{type}&7。"
+  World_Created: "&7[&a遊戲世界&7] &a地圖載入完成。&7(目前生成模式為: {generator} &7)"
+  World_Deleted: "&7[&a遊戲世界&7] &c地圖已刪除。"
+  World_Doesnt_Exist: "&7[&a遊戲世界&7] &c世界尚未載入，請先使用 &f/uhc regen &c來載入世界。"
+  Not_Generating: "&7[&a遊戲世界&7] &c抱歉，由於地圖已經載入完畢，因此本功能無法使用。"
+  Game_Running: "&c遊戲已經開始倒數了，無須再開始一次。"
+
+Editor:
+  Click_Finish: "&a&l[點擊這裡完成設定]"
+  Text:
+    Title:
+      Message: "&e請輸入新標題:"
+      Saved: "&7標題已變更為: &r{title}&7。"
+    TeamName:
+      Message: "&e請輸入新隊伍名稱:"
+      Saved: "&7隊伍名稱已被 &a{player} &7改成了: &r{name}&7。"
+    TeamCharacter:
+      Message: "&e請輸入新隊伍徽章 (最多只能 {length} 個字):"
+      Saved: "&7隊伍徽章已被 &a{player} &7改成了: &r{character}&7。"
+      Already_Used: "&8{symbol} &c已被使用，請嘗試其他隊伍名稱。"
+  Number:
+    Invalid_Number: "&c系統無法辨認你所輸入的內容，請確定輸入內容為數字後再試一次。"
+    MaxPlayers:
+      Message: "&e請輸入想設定的玩家上限數量:"
+      Saved: "&7玩家上限已設定為 {number} 位。"
+    BorderShrinkSpeed:
+      Message: "&e請輸入邊界一秒收縮的格數:"
+      Saved: "&7邊界收縮速度已設定為一秒 {number} 格。"
+    BorderSize:
+      Message: "&e請輸入邊界大小:"
+      Saved: "&7邊界大小已設定為 {number}。"
+    NetherBorderSize:
+      Message: "&e請輸入地獄邊界大小:"
+      Saved: "&7地獄邊界大小已設定為 {number}。"
+    FinalSizeOrShrinkModeBorder:
+      Message: "&e請輸入收縮模式的最終邊界大小:"
+      Saved: "&7數值已設定為 {number}。"
+  Broadcast:
+    Ip: "&e請輸入伺服器IP:"
+    Join_Time: "&e請輸入入場時間:"
+    Start_Time: "&e請輸入開始時間:"
+  Time:
+    Invalid_Time: "&c系統無法辨認你所輸入的內容，請確定輸入格式為 &6小時:分鐘:秒 &c後再試一次。"
+    Damage:
+      Message: "&e請輸入無敵失效時間&7(小時:分鐘:秒)&e:"
+      Saved: "&7無敵失效時間已設定為 &a{time}&7。"
+    FinalHeal:
+      Message: "&e請輸入最終回血時間&7(小時:分鐘:秒)&e:"
+      Saved: "&7最終回血時間已設定為 &a{time}&7。"
+    Pvp:
+      Message: "&e請輸入 PvP 開啟時間&7(小時:分鐘:秒)&e:"
+      Saved: "&7PvP開啟時間已設定為 &a{time}&7。"
+    BorderShrink:
+      Message: "&e請輸入第一次邊界收縮時間&7(小時:分鐘:秒)&e:"
+      Saved: "&7第一次邊界收縮時間已設定為 &a{time}&7。"
+    DisableNether:
+      Message: "&e請輸入地獄關閉時間&7(小時:分鐘:秒)&e:"
+      Saved: "&7地獄關閉時間已設定為 &a{time}&7。"
+    ShrinkCalculator:
+      Message: "&e你希望邊界從 &6{init}x{init} &e縮到 &b{final}x{final} &e共需花費多少時間呢&7(小時:分鐘:秒)&e:"
+      Saved: "&7已依照你的需求，計算出收縮速度為: &a一秒 {speed} 格&7。"
+  Inventory:
+    To_Head_Failed: "&c此功能需要你將金蘋果放在手上才能使用。"
+    Click_To_Head: "&6&l[點擊這裡將手上金蘋果轉換成金頭顱]"
+    CustomInventory:
+      Message: "&7請先將你所&a想設定的開始物品放到背包&7，並於完成後點擊完成按鈕來結束。"
+      Saved: "&a開始物品儲存完成。"
+    PracticeInventory:
+      Message: "&7請先將你所&a想設定的開始物品放到背包&7，並於完成後點擊完成按鈕來結束。"
+      Saved: "&a練習模式物品儲存完成。"
+    CustomDrops:
+      Message: "&7請先將你所&a想設定的掉落物放到背包&7，並於完成後點擊完成按鈕來結束。"
+      Saved: "&a死亡掉落物儲存完成。"
+    DisableItems:
+      Message: "&7請先將你所&a想設定的禁止物品放到背包&7，並於完成後點擊完成按鈕來結束。"
+      Saved: "&a禁止物品儲存完成。"
+
+Lobby:
+  Non_Spawn_Set: "&c&l未找到大廳座標，請先使用 &f&l/{cmd} &c&l設定大廳重生點。"
+  Welcome_Msg_Configuring:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&6本遊戲尚未設定完畢，請先使用道具或是 &e/uhc edit"
+    - "&6設定遊戲內容並載入地圖，待一切完成後再開放玩家入場。"
+    - " "
+    - "&3如果不知如何開始，可以輸入 &f/{cmd} &3獲取教學。"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+  Welcome_Msg:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&a歡迎你 &f{player}"
+    - " "
+    - "&a此次UHC由: &f{host} &a主持。"
+    - " "
+    - "&a使用 &f/scenarios &a將會顯示所有的模式"
+    - "&a使用 &f/config &a可以觀看此次UHC的所有設定"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+  Player_Join_Msg: "&a{player} &7加入了WonderlandUHC ({online}/{max})。"
+  Player_Leave_Msg: "&a{player} &7離開了遊戲 ({online}/{max})。"
+  Automatic_Game_Canceled: "&c由於人數不足因此遊戲無法開始，至少需要 &e{amount} &c位玩家才能開始。"
+
+Kick:
+  Waiting_Host: "&c遊戲設定中，請稍做等待。"
+  Generating: "&c世界正在載入中。"
+  Whitelisted: "&c目前白名單是開啟狀態。"
+  Full: "&c遊戲人數已滿。"
+  Game_Started: "&c遊戲已經開始了。"
+  Thanks_For_Playing: "&7謝謝你的遊玩 &f{player}。"
+
+CenterCleaner:
+  River_Center: "&c中心點出現河流，因此重新生成..."
+  Bad_Biome: "&c中心點太多差勁地形，因此重新生成... &7(&4{amount} 格差勁方塊&7)"
+  Too_Much_Wood: "&c中心點太多樹木，因此重新生成... &7(&4{amount} 個木頭&7)"
+  Too_High: "&c地形高度過&e高&c，恐怕不平整，因此重新生成... &7(&4{height} 格&7)"
+
+Team:
+  Full_Msg: "&c此隊伍已滿。"
+  Player_Joined: "&7[&a隊伍&7] &2{player} &a加入了隊伍 &7({players}/{max})。"
+  Player_Left: "&7[&a隊伍&7] &2{player} &c離開了隊伍 &7({players}/{max})。"
+  Player_Promoted: "&7[&a隊伍&7] &f{player} &6成為了新隊長。"
+  Only_In_Chosen_Mode: "&c此功能只能在自選隊伍的模式下使用。"
+
+Staff:
+  Enabled: "&7[&6管理系統&7] &a你開啟了管理員模式。"
+  Disabled: "&7[&6管理系統&7] &c你關閉了管理員模式"
+  Mined_Alert: "&7[&6管理系統&7] {player} 已挖掘了 &6{amount} &7個 {block}&7。"
+
+Spectator:
+  No_Perm_To_Spec: "&e&l因為你沒有權限，因此你將於 &f&l{fancy-time} &e&l後被剔除，感謝你的遊玩，祝福你下次能夠贏得勝利。"
+  Death_Kick_Message:
+    - "&7[&aWonderland&fUHC&7]"
+    - "&7你已被死亡剔除系統請出，歡迎下次再來。"
+  Teleported_To_Player: "&7[&3觀戰系統&7] 正在傳送到 &a{player}"
+
+#時間的代轉換字元共有兩種:
+#  1. {time}
+#  轉換結果:
+#    180秒 -> 3:00
+#    185秒 -> 3:05
+#  2. {fancy-time} (185秒 -> 3)
+#  轉換結果:
+#    180秒 -> 3分鐘
+#    185秒 -> 3分鐘5秒
+#歡迎你選擇合適自己的轉換方式。
+
+CountDown:
+  Scatter_Announce: "&7[&6&l遊戲提醒&7] &7將於 &a&l{fancy-time} &7後開始傳送玩家。"
+  Scatter_Started: "&7[&6&l遊戲提醒&7] &e&l開始傳送所有玩家至遊戲世界..."
+  Scatting_Players: "&7傳送玩家中... &7({count}/{total})。"
+  Scatter_Finished: "&7[&6&l遊戲提醒&7] &e&l所有玩家皆已傳送完畢，遊戲將於倒數完畢後開始。"
+  Damage_Announce: "&7[&6&l遊戲提醒&7] 無敵將於 &e&l{fancy-time} &7後失效。"
+  Damage_Enabled: "&7[&6&l遊戲提醒&7] &c無敵已失效。"
+  Pvp_Announce: "&7[&6&l遊戲提醒&7] PvP將於 &c&l{fancy-time} &7後開啟。"
+  Pvp_Enabled: "&7[&6&l遊戲提醒&7] &cPvP已開啟。"
+  Final_Heal_Announce: "&7[&6&l遊戲提醒&7] 將於 &d&l{fancy-time} &7後恢復所有血量。"
+  Final_Heal_Enabled: "&7[&6&l遊戲提醒&7] &c已恢復所有玩家血量。"
+  Nether_Announce: "&7[&6&l遊戲提醒&7] 地獄將於 &4&l{fancy-time} &7後關閉。"
+  Nether_Disabled: "&7[&6&l遊戲提醒&7] &c地獄已關閉。"
+  Starting_Announce: "&7[&6&l遊戲提醒&7] &7遊戲即將在 &2&l{fancy-time} &7後開始。"
+  Game_Started:
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+    - "&a&l遊戲開始了!"
+    - " "
+    - "&f盡所能地用最快的速度蒐集完所有資源"
+    - "&f並隨時注意旁邊是否有人埋伏"
+    - "&f希望你能夠擁有無比的運氣與良好的實力"
+    - "&f獲得最後的勝利。"
+    - " "
+    - "&a主持人 &f{host} &a祝福你遊玩愉快。"
+    - "&7&m――――――――――――――――――――――――――――――――――――――――――――"
+  Border:
+    Timer:
+      Announce: "&7[&6&l遊戲提醒&7] &7邊界將於 &4&l{fancy-time} &7後收縮到 &4&l{size}x{size} &7。"
+      Reduced: "&7[&6&l遊戲提醒&7] &7邊界已收縮至 {size}x{size}。"
+    Shrink:
+      Announce: "&7[&6&l遊戲提醒&7] &7邊界將於 &4&l{fancy-time} &7後開始收縮。"
+      Reduced: "&7[&6&l遊戲提醒&7] &7邊界已開始收縮，世界將會不停壓縮，直到 {size}x{size} 為止。"
+
+Game:
+  Player_Disconnect: "&f{player} &7離線了。"
+  Player_Reconnect: "&f{player} &a重新登入了遊戲。"
+  Cant_Join_Before_Pvp_Enabled: "&7[&c地獄&7] &c由於PvP尚未開啟，因此你還無法進入地獄。"
+  No_Nether: "&7[&c地獄&7] &c本場遊戲並沒有開啟地獄。"
+  You_Have_Been_Killed: "&7你被 &c{team} {character} &c{killer} &7以 &c{heal}❤ &7的血量差距擊殺。"
+  Team_Eliminated: "&e{team} &c全隊滅絕。"
+  World_Border_Reached: "&c&l萬里長城外相當危險，請止步吧。"
+  Item_Disabled: "&c本場UHC無法使用此物品。"
+  Relog_Death: '&f{player}&8[&c{playerKills}&8] &c因為離線超過 {minute} 分鐘而被判定死亡。'
+  Ipvp_Lava: "&cPvP尚未開放，你無法在玩家附近放岩漿。"
+  Ipvp_Fire: "&c&l由於PvP尚未開始，因此你無法放置任何可燃物在玩家身旁。"
+  Arrow_Health_Message: "&c{player} &7還剩下 &c{heal}❤&7。"
+  Closing_Server_Msg: "&c&l伺服器將於 &f&l{seconds} &c&l秒後關閉。"
+  Victory_Broadcast:
+    - "&f&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+    - "&6&l恭喜隊伍 {winner} 獲得這場UHC的勝利!"
+    - " "
+    - "&6隊伍總擊殺數: &f{kills}"
+    - "&6隊伍玩家:"
+    - "  &e{players}"
+    - " "
+    - "&7&lWonderlandUHC感謝你的遊玩。"
+    - "&f&m――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――"
+  NoClean:
+    Obtained: "&7[&e&l無敵&7] &f&l你已獲得 &6&l{fancy-time} &f&l的無敵時間。"
+    End: "&7[&e&l無敵&7] &c&l無敵時間已結束。"
+    Action_Bar: "&e&l無敵即將在 {fancy-time} 後結束。"
+    Action_Bar_End: "&c&l無敵已結束。"
+  #可自由新增死亡訊息 https://tinyurl.com/y57kpau3
+  PlayerDeath:
+    Lava:
+      - "&f{player}&8[&c{playerKills}&8] &c被岩漿燙死了。"
+      - "&f{player}&8[&c{playerKills}&8] &c想在岩漿裡游泳。"
+      - "&f{player}&8[&c{playerKills}&8] &c想證明給大家看它能抵抗岩漿的高溫，但很可惜失敗了。"
+    Fire,Fire_Tick:
+      - "&f{player}&8[&c{playerKills}&8] &c燒死了。"
+      - "&f{player}&8[&c{playerKills}&8] &c燒成灰了。"
+    Suffocation:
+      - "&f{player}&8[&c{playerKills}&8] &c卡在方塊內窒息了。"
+    Contact:
+      - "&f{player}&8[&c{playerKills}&8] &c被方塊刺死了。"
+    Fall:
+      - "&f{player}&8[&c{playerKills}&8] &c摔死了。"
+      - "&f{player}&8[&c{playerKills}&8] &c沒有估計好摔落傷害。"
+    Drowning:
+      - "&f{player}&8[&c{playerKills}&8] &c溺死了。"
+      - "&f{player}&8[&c{playerKills}&8] &c的肺裝滿了水，嗆死了。"
+    Entity_Attack:
+      - "&f{player}&8[&c{playerKills}&8] &c被 {entity} 殺死了。"
+    Entity_Explosion:
+      - "&f{player}&8[&c{playerKills}&8] &c被 {entity} 猛力一炸，沒命了。"
+    Block_Explosion:
+      - "&f{player}&8[&c{playerKills}&8] &c被炸死了。"
+    Logout:
+      - "&f{player}&8[&c{playerKills}&8] &c因為離線超過 {minute} 分鐘而被判定死亡。"
+    Other:
+      - "&f{player}&8[&c{playerKills}&8] &c死亡了。"
+    Player_Killed:
+      - "&c{player}&8[&c{playerKills}&8] &7被 &c{killer}&8[&c{killerKills}&8] &7擊殺。"
+      - "&c{player}&8[&c{playerKills}&8] &7被 &c{killer}&8[&c{killerKills}&8] &7砍死了！"
+      - "&c{player}&8[&c{playerKills}&8] &7被 &c{killer}&8[&c{killerKills}&8] &7處理掉了！"
+      - "&c{player}&8[&c{playerKills}&8] &7被 &c{killer}&8[&c{killerKills}&8] &7取下了首級。"
+ChatFormat:
+  Team_Chat: "&7[&a&l隊伍聊天&7] &a{player}: {msg}"
+  Mole_Chat: "&c間諜頻道 &f-> &e{player}&f: {msg}"
+  Player: "&7[&b玩家&7] &a{player}&f: {msg}"
+  Spectators: "&7[觀戰者] {player}: {msg}"
+  Staff: "&c&l[管理員] &e&l{player}: {msg}"
+
+Symbol:
+  Second: "秒"
+  Seconds: "秒"
+  Minute: "分鐘"
+  Minutes: "分鐘"
+
+Console:
+  Biome_Replaced: "&7[&e生態域轉換系統&7] &7成功將 &a{biome} &7轉換成 &a{changed}&7。"
+  Biome_Not_Exist: "&7[&e生態域轉換系統&7] &c名為 &4{biome} &c的生態域並不存在。"
+  Can_Not_Replace_Biome: "&7[&e生態域轉換系統&7] &c在將 &4{biome} &c生態域轉換至 &4{changed} &c生態域的過程發生了錯誤。"
+  Chunk_Load_Started: "&7[&a遊戲世界&7] &a開始載入 &f{world} &a世界的地圖。"
+  Chunk_Load_Finished: "&7[&a遊戲世界&7] &a成功在世界: &f{world} &a載入 &f{number} &a個Chunk。"
+  Chunk_Load_Nether_Detected: "&7[&a遊戲世界&7] &e&l偵測到本場遊戲有開啟地獄，因此開始載入地獄地圖。"
+  Force_Nether_Chunk_On: "&7[&a遊戲世界&7] &6&l雖然並未開啟地獄，但由於開啟了強制載入的功能，因此開始載入地獄地圖。若想關閉此功能，請將 settings.yml 裡面的 Force_Loading_Nether_Chunk 設定為 false。"
+
+Dependency:
+  Require_Dependency: "&c你尚未安裝 &f{plugin} &c插件，因此插件無法啟動。請先至 &b{url} &c下載並安裝後，再重新啟動伺服器。"
+  Require_Soft_Dependency: "&c你尚未安裝 &f{plugin} &c插件，因此本功能無法使用。請先至 &b{url} &c下載並安裝後，再重新嘗試一次。"
+  Using_Old_World_Border_In_New_Version:
+    - "&4&m______________________________________________________________"
+    - " "
+    - " "
+    - "&c&l請注意，你正在使用舊版本的 WorldBorder，載圖速度將會非常緩慢"
+    - "&c&l請至 &b&l{link} &c&l下載最新版本！"
+    - " "
+    - " "
+    - "&4&m______________________________________________________________"
+  Change_To_Older_World_Border_Version: "&c&l新版的 WorldBorder 並不支援 1.13 以下版本，請至 &b&l{link} &c&l下載舊版本。"
+
+Motd:
+  Configuring: "&3遊戲設定中"
+  Generating: "&3正在載入地圖"
+  Waiting: "&a開放入場 &7(&f{online}&7/{max}&7)"
+  Starting: "&2正在傳送玩家，目前尚可加入遊玩"
+  Playing: "&c遊戲已經開始，目前還有 &f{remaining} &c位玩家存活"
+
+DiscordVoice:
+  Requires_Linked_Account: "&7[&b&lDiscord語音&7] &c語音連線失敗！請先使用 /discord link 綁定帳戶，再使用 /reconnect 指令重新連結。"
+  Not_In_Voice: "&7[&b&lDiscord語音&7] &c語音連線失敗！請先隨意加入一個語音房，再使用 /reconnect 指令重新連結。"
+  Moved: "&7[&b&lDiscord語音&7] &e你已被移動至 {channel}。"
+  Reconnecting: "&7[&b&lDiscord語音&7] &7語音連線中..."
+
+Updater:
+  Checking_Updates: "&7檢查更新中..."
+  Up_To_Date: "&a插件為最新版本，毋須任何更新！"
+  Success:
+    - "&8&m______________________________________________________________"
+    - " "
+    - " "
+    - " "
+    - " "
+    - "&6&l插件已更新完畢，伺服器將會於 {fancy-time} 後重新啟動。"
+    - " "
+    - " "
+    - " "
+    - " "
+    - "&8&m______________________________________________________________"
+  Failed:
+    Internet:
+      - "&4&m______________________________________________________________"
+      - " "
+      - " "
+      - "&c&l插件在更新時出現錯誤，請檢察以下問題後，再重新嘗試一次："
+      - " "
+      - "  &61. 防火牆是否阻擋流量"
+      - "  &62. 網路連線是否正常"
+      - " "
+      - " "
+      - "&4&m______________________________________________________________"
+    Io_Exception:
+      - "&4&m______________________________________________________________"
+      - " "
+      - " "
+      - " "
+      - "&c&l插件在寫入檔案時發生錯誤，請確認防毒軟體沒有阻擋插件更新後，再重新嘗試一次。"
+      - " "
+      - "&6如果確認後依然有問題，請將以下錯誤複製並回報至: &b{link}"
+      - " "
+      - "&c錯誤訊息: &7{exception}"
+      - " "
+      - " "
+      - "&4&m______________________________________________________________"
+    File_Not_Found:
+      - "&4&m______________________________________________________________"
+      - " "
+      - " "
+      - " "
+      - "&c&l無法找到更新文件，請將以下問題回報至: &b{link}"
+      - " "
+      - "&c錯誤訊息: &7{exception}"
+      - " "
+      - " "
+      - "&4&m______________________________________________________________"

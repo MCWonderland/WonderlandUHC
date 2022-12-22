@@ -1,0 +1,241 @@
+#非常感謝你願意花錢投資此插件，魯魯感謝你!
+#由於此插件的功能實在相當多樣，能夠調整的東西也不少，以下將會在每種選項完整介紹它的用處
+#即使你不懂英文，也能夠明白每個選項的用途
+
+#如果有任何設定上的問題，歡迎插件的Discord社群獲得相關協助: https://discord.gg/FgjWsp7
+
+#請將正版驗證代碼放在此處
+Serialization: ""
+
+#請不要更改這些內容
+Version: 0
+Locale: "en"
+
+#是否要開啟聲音
+Sounds: true
+#此功能是給大型伺服器有使用Bungeecord的伺服主使用的
+#如果你只是單純開伺服器，可完全忽略此選項
+Bungee_Lobby: "Lobby"
+#重新啟動伺服器的指令(遊戲自動關閉、地圖開始載入、地圖載入完成重開時...等等都會用到)
+Restart_Cmd: "restart"
+
+Border:
+  #瞬縮邊界的基岩高度(不用調整太高，不僅無聊而且占用效能)
+  #特別注意:由於生成邊界要放置大量方塊，此選項在 1.14 以上會讓伺服器非常Lag，請謹慎使用。
+  Bedrock_Border_Height: 0
+  #瞬縮邊界在縮的時候，是否也要把 Minecraft 原版邊界一起設定成同樣大小?
+  Include_18_Border: true
+  #如果是瞬縮邊界，第一次收縮後，幾秒後要再收縮一次?
+  Border_Timer_After_First_Shrink: 300
+  #邊界所有大小
+  #此功能是用於瞬縮邊界決定下一次收縮要收縮到多少
+  #例如: 邊界收縮到500x500後，下次就會收縮到100x100
+  #特別注意!如果一開始邊界大小 小於 下方列表最大的大小的話，將會直接取用「小於邊界大小最大的數值」
+  #例如: 如果我初始邊界為2000x2000，邊界第一次收縮不會選擇4000x4000，而是1000x1000
+  #考試: 如果我一開始邊界大小是4000x4000，請問他第一次收縮會選擇哪種大小? A: 4000x4000 B: 2000x2000? 答案: B
+  Border_Tp_Sizes:
+    - 5000
+    - 4000
+    - 3000
+    - 2000
+    - 1000
+    - 400
+    - 200
+    - 100
+    - 50
+
+Team:
+  #是否要讓玩家可以單獨一隊?
+  #如果此選項關閉，遊戲開始時系統會盡量把每個隊伍分滿玩家
+  #此選項就可用在隨機分隊
+  Alone_Teams: false
+  #就跟UHC Blox一樣，每個隊伍都會有自己的顏色
+  #這個選項管理的是: 系統是否要隨機給予沒有顏色的隊伍一個顏色，讓彼此更能分辨?
+  Give_Default_Team_Random_Color: true
+  #隊伍徽章預設是否要為粗體?
+  Character_Bold_Default: true
+  #隊伍徽章是否允許玩家自訂顏色?
+  Allow_Character_Color: false
+  #是否要在玩家列表 (Tab) 顯示隊伍顏色及徽章? (關閉的話只會有玩家 ID)
+  Teams_On_Tab: true
+  #隊伍徽章最多能幾個字? (數字不可超過 16，否則會有系統問題)
+  Max_Character_Length: 3
+  #創建隊伍時，系統預設給予該隊伍的名稱
+  Default_Name: "{player} 的隊伍"
+
+CombatRelog:
+  #玩家是否可以重登?
+  #如果可以的話，玩家登出後會變成一隻殭屍，直到玩家回來
+  #如果不行，玩家登出會直接死亡
+  Enabled: true
+  #當PvP開啟後，是否還能夠重登?
+  Relog_After_Pvp_Enabled: true
+  #玩家登出後至少要在幾分鐘以內重登?否則就會被系統殺死
+  Relog_In_Minutes: 10
+
+Spectator:
+  #觀察者是否該有一個專屬頻道，只有觀察者彼此看的到訊息?
+  Use_Spec_Chat: true
+  #觀察者模式
+  #  DEFAULT 觀察者會是創造模式(無法破壞方塊)並且拿到觀察者物品
+  #  SPECTATOR: 單純將玩家設定成觀察者模式(gamemode 3)
+  Spectate_Mode: DEFAULT
+  #當玩家死亡後，如果沒有觀戰的權限，要在幾秒後把他剔除遊戲呢?
+  Death_Kick_Seconds: 30
+
+
+Misc:
+  #是否要讓遊戲世界保持天亮?
+  Always_Day: true
+  #是否要讓遊戲世界的火不要蔓延?
+  No_Fire_Tick: true
+  #是否要讓遊戲世界不要下雨?
+  Anti_Rain: true
+  #當遊戲尚未開始時，是否要隱藏大廳玩家?
+  #如果你的伺服器在很多人擠在一起時會Lag，非常推薦你開啟此選項
+  Lobby_Hide: false
+  #是否關閉玩家於大廳的走路與揮擊聲
+  Disable_Lobby_Sounds: true
+  #是否關閉觀戰者揮擊玩家的聲音
+  Disable_Spectator_Hit_Sounds: true
+  #是否使用提示文字告訴玩家剩餘的無敵時間？
+  No_Clean_Action_Bar: true
+  #是否當玩家死亡時，是否要顯示玩家倒下的特效?
+  Death_Animation: false
+  #系統是否要在你用弓箭射中玩家時，告訴你該玩家剩下的血量?
+  Arrow_Health: true
+  #是否要隨著遊戲進行到不同時期，更換伺服器簡介?
+  #(伺服器簡介就是你在伺服器列表會看到每個伺服器的那個文字)
+  Change_Motd: true
+  #金頭顱物品名稱
+  Golden_Head_Name: "&6&l金頭顱"
+  #Tab血量顯示方式
+  #以下共有兩種方式，分別為:
+  #  1."dummy" -> 會以"數字"的方式顯示玩家血量
+  #  2."health" -> 會直接顯示玩家剩下的"愛心"(跟UHC Blox一樣)
+  #  3."none" -> 完全不顯示血量
+  Tab_Health_Type: Dummy
+  #是否要在玩家名條下方顯示血量?
+  Use_Below_Name_Health: true
+  #是否要使用插件的死亡訊息 (若關閉此選項，系統將使用原版 Minecraft 的死亡訊息系統)
+  Use_Plugin_Death_Message: true
+Game:
+  #UHC遊玩的世界名稱(大廳世界跟遊戲世界是不同的，請讓這個世界跟大廳世界不一樣喔!)
+  Uhc_World_Name: "uhc_world"
+  #開始傳送倒數時間 (數值請大於1)
+  Pre_Start_Time: 20
+  #當所有玩家都傳送完畢後，要在等待幾秒後開始遊戲呢?
+  #(跟UHC Blox不同，此系統會把開始遊戲分兩階段，分別為傳送玩家，以及正是遊戲開始倒數，此部分管理的是正式遊戲開始倒數)
+  Time_To_Start_After_Teleport: 15
+  #多少Tick傳送一次玩家呢?(此功能是用在遊戲開始時，要把玩家慢慢從大廳世界傳送到遊戲世界時使用，增加一點延遲能夠減少效能消耗)
+  #備註: 1秒 = 20tick
+  #建議數值在10~20之間即可，當然如果你電腦夠好可以調更低，讓傳送速度更快
+  Teleport_Players_Delay: 15
+  #復活玩家應該要有幾秒的無敵時間?
+  Respawn_Invincible_Time: 20
+  #當PvP尚未開啟時玩家能否進入地獄?
+  Nether_Before_Pvp: false
+  #瞬縮邊界傳送邊界外玩家進來的方式
+  #  RANDOM 單純隨機傳送，每個人被傳送到的點都不同
+  #  POINT 將玩家分成N等分，每一等分傳送到同一個點，並在傳送後給予一定時間的無敵
+  Teleport_Mode: POINT
+  #若傳送模式為 POINT，一共要將玩家分成幾等份?
+  Point_Tp_Locations: 4
+  #若傳送模式為 POINT，在傳送玩家後要給予多少秒的無敵時間?
+  Point_Tp_Invincible_Time: 5
+  #等待開始時，要用甚麼方式不讓玩家移動?
+  #  POTION 利用藥水效果讓玩家無法移動
+  #  SIT 讓玩家坐著無法移動
+  #注意！如果使用SIT模式，請將server.properties文件裡的 allowflight 設定為true，不然玩家會一直因為飛行被剔除
+  Freeze_Type: POTION
+  #在倒數剩下多少秒的時候會公告一次?
+  #例如: PvP剩下3分鐘(180秒)時會公告訊息一次
+  Announces_Seconds:
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 10
+    - 15
+    - 30
+    - 60
+    - 180
+    - 300
+#舊版附魔系統
+#以UHC來說，許多伺服器會嚮往能夠有1.7附魔系統，因為1.7會隱藏附魔屬性
+#並且介面上顯示的等級，就等於你得花費的等級(顯示30等，就真的得花30等附魔一次)，而不像1.8以後只是扣3等加上3顆青金石而已
+#1.7附魔系統不但可以增加附魔的神秘與刺激性，更能讓玩家無法一直附魔(等級扣很重)，避免玩家裝備到最後太OP
+#當然，如果你希望保持正常的附魔系統，直接將以下選項全部關閉即可
+OldEnchant:
+  #當你打開附魔台介面，是否要自動填滿青金石?
+  Lapis: false
+  #是否要隱藏附魔屬性?讓玩家不知道會附到甚麼
+  Hide_Enchant: false
+  #讓玩家可以刷附魔選項，每次物品重新放上去，都會生成不同的附魔選項
+  Random_Enchant: false
+  #是否要讓螢幕上顯示的附魔數字，等於玩家附魔所要花費的等級?
+  Old_Enchant_Cost: false
+
+#中心點清理系統的相關數值(如果你不理解每個數值會造成甚麼影響，保持原樣即可！)
+CenterCleaner:
+  #是否允許中心點出現一些不方便PvP的生態域?(例如高山、沼澤....等等)
+  Allow_Bad_Biome: false
+  #偵測範圍 (100 指的是 x與z -100 ~ 100)
+  Range: 100
+  #以00為中心，方圓多少格內不能出現河流(方便PvP)
+  Check_River_In: 50
+  #以00為中心，方圓200格內地形高度最多能到多少?(避免中心點凹凸不平，或是出現高山)
+  Max_High: 90
+  #有些生態域雖然不是很方便PvP，卻也好像沒那麼差勁
+  #以下數值是偵測方圓200格內這種生態域的「方塊」(在MC中每個方塊其實都是屬於某種生態域)共能有多少個?
+  Bad_Biome_Limit: 13000
+  #生態域大小 (只在 1.12(含) 以前有用)
+  Generator_Settings: '{"coordinateScale":684.412,"heightScale":684.412,"lowerLimitScale":512.0,"upperLimitScale":512.0,"depthNoiseScaleX":200.0,"depthNoiseScaleZ":200.0,"depthNoiseScaleExponent":0.5,"mainNoiseScaleX":80.0,"mainNoiseScaleY":160.0,"mainNoiseScaleZ":80.0,"baseSize":8.5,"stretchY":12.0,"biomeDepthWeight":1.0,"biomeDepthOffset":0.0,"biomeScaleWeight":1.0,"biomeScaleOffset":0.0,"seaLevel":63,"useCaves":true,"useDungeons":true,"dungeonChance":8,"useStrongholds":true,"useVillages":true,"useMineShafts":true,"useTemples":true,"useMonuments":true,"useRavines":true,"useWaterLakes":true,"waterLakeChance":4,"useLavaLakes":true,"lavaLakeChance":80,"useLavaOceans":false,"fixedBiome":-1,"biomeSize":2,"riverSize":4,"dirtSize":33,"dirtCount":10,"dirtMinHeight":0,"dirtMaxHeight":256,"gravelSize":33,"gravelCount":8,"gravelMinHeight":0,"gravelMaxHeight":256,"graniteSize":33,"graniteCount":10,"graniteMinHeight":0,"graniteMaxHeight":80,"dioriteSize":33,"dioriteCount":10,"dioriteMinHeight":0,"dioriteMaxHeight":80,"andesiteSize":33,"andesiteCount":10,"andesiteMinHeight":0,"andesiteMaxHeight":80,"coalSize":17,"coalCount":20,"coalMinHeight":0,"coalMaxHeight":128,"ironSize":9,"ironCount":20,"ironMinHeight":0,"ironMaxHeight":64,"goldSize":9,"goldCount":2,"goldMinHeight":0,"goldMaxHeight":32,"redstoneSize":8,"redstoneCount":8,"redstoneMinHeight":0,"redstoneMaxHeight":16,"diamondSize":8,"diamondCount":1,"diamondMinHeight":0,"diamondMaxHeight":16,"lapisSize":7,"lapisCount":1,"lapisCenterHeight":16,"lapisSpread":16}'
+
+ChunkLoading:
+  #開啟此選項後，即使沒有開啟地獄，系統依然會載入地獄的Chunk
+  #(讓主持人即使在地圖載入完後想改變心意開啟地獄，也不用擔心沒載入地獄的問題)
+  Force_Loading_Nether_Chunk: true
+  #地圖載入速度，以下共有兩個數值:
+  #Frequency: 每秒載入多少個Chunk(區塊)
+  #Padding: 載完原本的大小後，要額外多載入多少的Chunk增加穩定性?
+  #方案參考
+  #性能非常差的伺服器(真的要很差，這數值載入速度超級慢...)
+  #  frequency: 10
+  #  padding: 208
+  #性能普通的伺服器
+  #  frequency: 100
+  #  padding: 208
+  #性能很棒的伺服器
+  #  frequency: 1000
+  #  padding: 208
+  #NASA方案
+  #  frequency: 6000
+  #  padding: 208
+  Frequency: 600
+  Padding: 208
+
+Practice:
+  World: "uhc_practice"
+  World_Size: 150
+
+#MySQL資料庫
+#此選項是給伺服器有使用MySQL雲端資料庫儲存資料使用的
+#如果你只是要開UHC，直接無視此選項也可以！
+Mysql:
+  Use: false
+  Ip: "localhost"
+  Port: 3306
+  Database: "database"
+  Username: "root"
+  Password: "password"
+  Table: "wonderlanduhc_stats"
+
+DiscordVoice:
+  Use: false
+  Guild_Id: "000000000000000000"
+  Voice_Category: "000000000000000000"
+  Lobby_Voice: "000000000000000000"
+
+Prefix: ""
