@@ -1,0 +1,112 @@
+#生態域覆蓋功能
+#以下設定是我花了一段時間調整的，基本上還算適合UHC
+#當然也歡迎你自行發揮創意，調整出更好的生態域配置。
+BiomeChanger:
+  PLAINS:
+    #以下生態域將會變成平原
+    - FOREST
+    - WARM_OCEAN
+    - BEACHES
+    - ROOFED_FOREST
+    - OCEAN
+  FOREST:
+    #以下生態域將會變成森林
+    - JUNGLE
+    - DEEP_OCEAN
+    - DEEP_WARM_OCEAN
+    - DEEP_LUKEWARM_OCEAN
+    - DEEP_COLD_OCEAN
+    - LUKEWARM_OCEAN
+    - COLD_OCEAN
+    - FROZEN_OCEAN
+    - DEEP_FROZEN_OCEAN
+    - MUSHROOM_ISLAND
+    - MUSHROOM_ISLAND_SHORE
+  SWAMPLAND:
+    #以下兩種生態域將會變成沼澤
+    - JUNGLE_EDGE
+    - JUNGLE_HILLS
+  RIVER:
+    #以下一種生態域將會變成河流
+    - STONE_BEACH
+
+#生態域列表:
+#ALL 所有生態域
+#BEACHES  沙灘
+#BIRCH_FOREST  白樺木林
+#BIRCH_FOREST_HILLS  白樺木林丘陵
+#COLD_BEACH  冰冷海灘
+#TAIGA_COLD  冷杉木林
+#TAIGA_COLD_HILLS  冷杉木林丘陵
+#DEEP_OCEAN  深洋
+#DESERT  沙漠
+#DESERT_HILLS  沙漠丘陵
+#SMALLER_EXTREME_HILLS  較小的高山
+#EXTREME_HILLS  高山
+#EXTREME_HILLS_PLUS  高峰(比高山高)
+#FOREST  森林
+#FOREST_HILLS  森林丘陵
+#FROZEN_OCEAN  冰凍海洋
+#FROZEN_RIVER  冰凍河流
+#HELL  地獄
+#ICE_MOUNTAINS  冰凍丘陵
+#ICE_FLATS  凍原
+#JUNGLE  雨林
+#JUNGLE_EDGE  叢林邊緣
+#JUNGLE_HILLS  叢林丘陵
+#MEGA_TAIGA  巨型針葉林
+#MEGA_TAIGA_HILLS  巨型針葉林丘陵
+#MESA  紅土大陸
+#MESA_ROCK  紅土高原(有樹)
+#MESA_CLEAR_ROCK  紅土高原(沒有樹)
+#MUSHROOM_ISLAND  蘑菇島
+#MUSHROOM_ISLAND_SHORE  蘑菇海岸
+#OCEAN  海洋
+#PLAINS  平原
+#RIVER  河流
+#ROOFED_FOREST  黑橡木林
+#SAVANNA  莽原
+#SAVANNA_ROCK  莽原高原
+#SMALL_MOUNTAINS  小型山丘(平原那種)
+#STONE_BEACH  斷層海岸
+#SWAMPLAND  沼澤
+#TAIGA  針葉林
+#TAIGA_HILLS  針葉林丘陵
+#---------以下為1.9以上才有的生態域---------
+#VOID  虛空
+#SMALL_END_ISLANDS 終界小島
+#變異生態域
+#MUTATED_PLAINS  向日葵平原
+#MUTATED_DESERT  沙漠綠洲(不會有草地，但是會出現湖泊)
+#MUTATED_EXTREME_HILLS  石頭山(充滿礫石，也可稱為死亡山丘，非常貧脊的地方)
+#MUTATED_FOREST  繁花森林
+#MUTATED_TAIGA  針葉林山地
+#MUTATED_SWAMPLAND  沼澤丘陵
+#MUTATED_ICE_FLATS  冰刺之地
+#MUTATED_JUNGLE  特化叢林
+#MUTATED_JUNGLE_EDGE  特化叢林邊緣
+#MUTATED_BIRCH_FOREST  高樺木森林
+#MUTATED_BIRCH_FOREST_HILLS  高樺木丘陵
+#MUTATED_ROOFED_FOREST  黑橡木林丘陵
+#MUTATED_TAIGA_COLD  冷山木林山地
+#MUTATED_REDWOOD_TAIGA  紅木針葉林(比巨型針葉林更巨大的針葉林)
+#MUTATED_REDWOOD_TAIGA_HILLS  紅木針葉林丘陵
+#MUTATED_EXTREME_HILLS_PLUS  石頭山峰(比起石頭山更加劇烈的地形起伏)
+#MUTATED_SAVANNA_ROCK  巨型莽原(會有超高山與大量石頭，在維基中稱為零碎莽原)
+#MUTATED_MESA  紅土平頂山
+#MUTATED_MESA_ROCK  紅土平頂山高原(有樹)
+#MUTATED_MESA_CLEAR_ROCK  紅土平頂山高原(沒有樹)
+#---------以下為1.13以上才有的生態域---------
+#END_MIDLANDS 終界平地 (不會生成歌萊果，會生成堡壘)
+#END_HIGHLANDS 終界高地
+#END_BARRENS 終界荒地
+#WARM_OCEAN 溫暖海洋
+#LUKEWARM_OCEAN 溫和海洋
+#COLD_OCEAN 寒冷海洋
+#DEEP_WARM_OCEAN 溫暖深洋
+#DEEP_LUKEWARM_OCEAN 溫和深洋
+#DEEP_COLD_OCEAN 寒冷深洋
+#DEEP_FROZEN_OCEAN 冰凍深洋
+#---------以下為1.14以上才有的生態域---------
+#BAMBOO_JUNGLE 竹林
+#BAMBOO_JUNGLE_HILLS 竹林山丘

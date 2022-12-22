@@ -1,0 +1,295 @@
+Armor_Vs_Health:
+  Type: DIAMOND_CHESTPLATE
+  Name: "&c裝備的代價&7(ArmorVsHealth)"
+  Description:
+    - "玩家的裝備值每增加半格，最大血量便會扣除半格"
+    - "且扣除的血量不會在玩家脫裝後恢復。"
+  Apply_Within_Seconds_After_Respawned: 10
+  Warn_Msg:
+    - "&4&m――――――――――――――――――――――――――――――――――――――――――――"
+    - " "
+    - "&c裝備代價的效果將會於 {fancy-time} 後生效"
+    - "&c請在時間內重新配置你的裝備。"
+    - " "
+    - "&4&m――――――――――――――――――――――――――――――――――――――――――――"
+Absorption_Less:
+  Type: GOLD_NUGGET
+  Name: "&c無吸收&7(Absorptionless)"
+  Description:
+    - "吃下金蘋果時，玩家將不會獲得額外的吸收血量。"
+Backpack:
+  Type: ENDER_CHEST
+  Name: "&b隊伍背包&7(BackPack)"
+  Description:
+    - "玩家可透過 /{cmd} 指令與隊友共享資源。"
+  Cant_Use_Msg: "&c本場次並沒有開啟隊伍背包，因此本指令無法使用。"
+  #隊伍背包的大小 (必須為 9 的倍數)
+  Size: 27
+Bench_Blitz:
+  Type: WORKBENCH
+  Name: "&2匠魂之心&7(BenchBlitz)"
+  Description:
+    - "整場遊戲，玩家只能製作一個工作台。"
+  Workbench_Created: "&7[&2匠魂之心&7] &c由於匠魂之心模式的限制，你無法製作超過一個工作台。"
+  Workbench_Created_Sound: LEVEL_UP 1.0F 2.0F
+Blood_Diamonds:
+  Type: DIAMOND
+  Name: "&4血鑽石&7(BloodDiamond)"
+  Description:
+    - "每挖掘一個鑽石礦，玩家皆會扣除 {heal} 滴血。"
+  #挖掘鑽石礦要扣除的血量
+  Damage: 1
+Bow_Less:
+  Type: BOW
+  Name: "&c無弓箭模式&7(Bowless)"
+  Description:
+    - "弓箭將無法使用。"
+Cut_Clean:
+  Type: IRON_INGOT
+  Name: "&e礦物免燒&7(CutClean)"
+  Description:
+    - "礦物將直接以錠的形式掉落，生物也會直接掉落烤熟的食物。"
+Damage_Dogers:
+  Type: TNT
+  Name: "&4犧牲者&7(DamageDogers)"
+  Description:
+    - "遊戲中前 {amount} 位受到傷害的玩家，將會立即死亡。"
+  #共有多少人要成為犧牲者
+  Amount: 3
+  Death_Cause_This: "&7[&4犧牲者&7] &4&l{player} &c&l成為了本場次的犧牲者，目前犧牲者仍然還缺 &4&l{amount} &c&l位。"
+  Death_Cause_This_Sound: CLICK 1.0F 1.0F
+Diamond_Less:
+  Type: DIAMOND_ORE
+  Name: "&c無鑽石模式&7(DiamondLess)"
+  Description:
+    - "你無法挖掘鑽石，但可以透過箱子找到的鑽石製作物品。"
+Double_Or_Nothing:
+  Type: BONE
+  Name: "&e得失參半&7(DoubleOrNothing)"
+  Description:
+    - "以下方塊可能會掉落以雙倍數量掉落，或者一無所有。"
+    - "{materials}"
+  #此模式要套用到那些方塊上
+  Trigger_Blocks:
+    - DIAMOND_ORE
+    - GOLD_ORE
+  Nothing_Sound: CHICKEN_EGG_POP 1.0F 1.0F
+Fast_Obsidian:
+  Type: OBSIDIAN
+  Name: "&e脆弱黑石&7(FastObsidian)"
+  Description:
+    - "黑曜石的挖掘速度將會提升。"
+Fast_Smelting:
+  Type: FURNACE
+  Name: "&e快速燒烤&7(FastSmelting)"
+  Description:
+    - "熔爐燒製的速度將會加倍。"
+Fire_Less:
+  Type: FLINT_AND_STEEL
+  Name: "&6抗火&7(Fireless)"
+  Description:
+    - "岩漿及任何火焰不會對玩家產生任何傷害。"
+Food_Neophobia:
+  Type: COOKED_FISH
+  Name: "&2貫徹始終&7(Foodneophobia)"
+  Description:
+    - "玩家整場遊戲，只能食用第一次吃下的東西。"
+    - "(藥水，金蘋果，牛奶除外)"
+  First_Eat: "&7[&2貫徹始終&7] &c&l注意，貫徹始終模式的效果，從今以後你只能食用 &6&l{foodtype}&c&l。"
+  Just_Can_Eat: "&7[&2貫徹始終&7] &c由於本場的貫徹始終效果限制，你無法食用其他類別食物，你只能食用 &6{foodtype}&c。"
+  First_Eat_Sound: NOTE_BASS 1.0F 1.0F
+  Just_Can_Eat_Sound: CLICK 1.0F 1.0F
+Gold_Less:
+  Type: GOLD_ORE
+  Name: "&c無黃金模式&7(Goldless)"
+  Description:
+    - "你無法挖掘黃金，但可以透過箱子找到的黃金製作物品。"
+Hasty_Boys:
+  Type: GOLDEN_PICKAXE
+  Name: "&e工具人&7(HastyBoys)"
+  Description:
+    - "所有工具在合成時，都會自帶效率III。"
+Horse_Less:
+  Type: SADDLE
+  Name: "&c時速限制&7(Horseless)"
+  Description:
+    - "你無法騎馬。"
+Iron_Man:
+  Type: IRON_CHESTPLATE
+  Name: "&b鋼鐵人&7(IronMan)"
+  Description:
+    - "只要在最終回血之前沒有受傷，即可增加額外的 {heal} 滴血。(最大血量)"
+  #鋼鐵人要額外給予多少血量
+  Extra_Heal: 4
+  Damage_Before_Final_Heal: "&7[&b鋼鐵人&7] &c&l由於你在最終回血前受傷了，因此你錯失了成為鋼鐵人的機會。"
+Less_Bow_Damage:
+  Type: BOW
+  Name: "&b弓箭減傷&7(LessBowDamage)"
+  Description:
+    - "弓箭的傷害將會降低 {percent}%。"
+  #減傷程度 (%)
+  Decrease_Percent: 50
+Limitations:
+  Type: BARRIER
+  Name: "&2礦物限量&7(Limitations)"
+  Description:
+    - "每場遊戲，你最多只能挖掘 {diamond-limit} 個鑽石、{gold-limit} 個黃金及 {iron-limit} 個鐵礦。"
+  Reached_Limit: "&7[&2礦物限量&7] &c抱歉，你最多只能挖掘 {amount} 個 {block}。"
+  Cant_Mine_More: "&7[&2礦物限量&7] &c&l你已達到 &6&l{block} &c&l的挖掘上限 ({amount}個)，從現在起你將無法再從此方塊獲得任何掉落物。"
+  Reached_Limit_Sound: CLICK 1.0F 1.0F
+  Cant_Mine_More_Sound: NOTE_BASS 1.0F 1.0F
+  #礦物的限制數量
+  Limits:
+    Iron: 64
+    Gold: 32
+    Diamond: 16
+Lucky_Leaves:
+  Type: DEAD_BUSH
+  Name: "&e藏金於樹&7(LuckyLeaves)"
+  Description:
+    - "金蘋果將有 {percent}% 的機率從樹上掉落。"
+  #金蘋果掉落機率
+  Golden_Apple_Percent: 1
+No_Clean:
+  Type: APPLE
+  Name: "&b撿頭防止機制&7(NoClean)"
+  Description:
+    - "每擊殺一位玩家，玩家都會擁有 {fancy-time} 的無敵時間。"
+  #無敵時間
+  Invincible_Seconds: 15
+No_Enchant:
+  Type: ENCHANTMENT_TABLE
+  Name: "&c符文殺手&7(NoEnchant)"
+  Description:
+    - "玩家將無法附魔。"
+No_Fall:
+  Type: FEATHER
+  Name: "&e掉落免傷&7(NoFall)"
+  Description:
+    - "玩家將不會受到任何摔落傷害。"
+Potion_Less:
+  Type: POTION
+  Name: "&c無藥水模式&7(Potionless)"
+  Description:
+    - "你無法使用/製作任何藥水。"
+Rod_Less:
+  Type: FISHING_ROD
+  Name: "&c無釣竿模式&7(Rodless)"
+  Description:
+    - "玩家將無法使用釣竿。"
+Shift_Kill:
+  Type: LEATHER_BOOTS
+  Name: "&b殺手之心&7(ShiftKill)"
+  Description:
+    - "玩家若沒有在蹲下的狀態擊殺他人"
+    - "將會扣除當時血量一半的生命值。"
+Silk_Web:
+  Type: WEB
+  Name: "&e絲綢之網&7(SilkWeb)"
+  Description:
+    - "使用剪刀破壞蜘蛛網將會直接掉落蜘蛛網。"
+    - "(如果關閉，使用任何工具挖掘都只會掉落線)"
+Soup:
+  Type: MUSHROOM_SOUP
+  Name: "&b濃湯&7(Soup)"
+  Description:
+    - "右鍵點擊蘑菇湯，將會立即回復 {heal} 滴血。"
+  #一碗湯能恢復多少血量
+  Regen_Health: 7
+Swap_Inventory:
+  Type: IRON_CHESTPLATE
+  Name: "&b生死之交&7(SwapInventory)"
+  Description:
+    - "玩家將會與被擊殺的人交換裝備及背包物品。"
+Switcheroo:
+  Type: ENDER_PEARL
+  Name: "&b飄疑不定&7(Switcheroo)"
+  Description:
+    - "玩家將會與被射中的人交換位置。"
+  Switch_Sound: ENDERMAN_TELEPORT 1.0F 1.0F
+Timber:
+  Type: OAK_SAPLING
+  Name: "&e快速伐木&7(Timber)"
+  Description:
+    - "只需挖掘一塊木頭，整棵樹就會直接被破壞。"
+Time_Bomb:
+  Type: CHEST
+  Name: "&b死亡棺材&7(TimeBomb)"
+  Description:
+    - "玩家死亡時，會將所有物品裝入大箱子中"
+    - "並於 {fancy-time} 後爆炸。"
+  #箱子要於幾秒後爆炸
+  Explode_After_Seconds: 30
+  #爆炸是否要摧毀方塊
+  Explode_Blocks: false
+  #爆炸威力
+  Explosion_Power: 3
+  Exploded: "&8[&c死亡棺材&8] &7{player} &7的棺材爆炸了。"
+  Warn_Sound: LEVEL_UP 2.0F 2.0F
+  Warn_Sound_Danger: LEVEL_UP 2.0F 5.0F
+Triple_Arrow:
+  Type: ARROW
+  Name: "&b三矢弓模式&7(TripleArrow)"
+  Description:
+    - "一次射擊會同時發射三發箭矢。"
+Triple_Ores:
+  Type: LAPIS_ORE
+  Name: "&e三倍礦物&7(TripleOres)"
+  Description:
+    - "礦物掉落量將乘以 3 倍。"
+Vanilla_Plus:
+  Type: FLINT
+  Name: "&e豐收&7(VanillaPlus)"
+  Description:
+    - "礫石掉落碎石的機率將會加倍。"
+Vein_Miners:
+  Type: DIAMOND_PICKAXE
+  Name: "&e連鎖挖礦&7(VeinMiners)"
+  Description:
+    - "只要挖掘一個礦物，與其相連的礦物也會跟著被破壞。"
+Fragile_Rods:
+  Type: FISHING_ROD
+  Name: "&c腐蝕釣竿&7(FragileRods)"
+  Description:
+    - "只要釣竿「甩出去」，就會扣一次耐久度。"
+Mole:
+  Type: SPIDER_EYE
+  Name: "&c間諜模式&7(Mole)"
+  Description:
+    - "遊戲時間進行到 {fancy-time} 時，每個隊伍將會選出一個間諜。"
+  Mole_Spawn_Minutes: 20
+  Sword_Given_After_Seconds: 10
+  Mole_Countdown_Sound: NOTE_PLING 1.0F 1.0F
+  Mole_Spawn_Sound: NOTE_PLING 1.0F 2.0F
+  Sword_Given_Sound: LEVEL_UP 1.0F 1.0F
+  Mole_Team_Name: "&c&l間諜"
+  Mole_Countdown_Message: "&7[&c&l間諜模式&7] &7間諜將在 &7{second} &7秒後產生"
+  Sword_Receiver_Message: "&7[&c&l間諜模式&7] &f你是懲戒之劍的持有者！請注意，這把劍&c&l只能使用一次&f，務必謹慎使用，對&4&l正確的人&f揮下正義的一刀。"
+  Mole_Access_Deny_Message: "&7[&c&l間諜模式&7] &c你不是間諜。"
+  Mole_Exposed_Message: "&7[&c&l間諜模式&7] &c&l{player} &f&l是間諜！"
+  Sword_Misdamage_Message: "&7[&c&l間諜模式&7] &c&l你砍錯人了！因此受到了神聖刀鋒的制裁！"
+  Mole_Player_Message:
+    - "&8&m―――――――――――――――――&4間諜模式通知&8&m―――――――――――――――――"
+    - "&c&l你是間諜 你是間諜 你是間諜"
+    - "&f你的目標是聯合其他間諜，殺掉所有不是間諜的人"
+    - "&f從現在開始，請務必隱瞞好自己的身分，&b&l千萬不要被發現了"
+    - "&f以下是本場你可以使用的指令："
+    - "&a/mole chat <訊息> &f與其他間諜對話"
+    - "&a/mole list &f查看間諜名單"
+    - "&a/mole scs &f向間諜發送自己的座標"
+    - "&a/mole kit &f選擇一個你想要的間諜職業 &c&l請務必選擇!!!"
+    - "&8&m――――――――――――――――――――――――――――――――――――――――――――"
+  NotMole_Player_Message:
+    - "&8&m―――――――――――――――――&4間諜模式通知&8&m―――――――――――――――――"
+    - "&6&l你不是間諜 你是清白的平民"
+    - "&f你的目標是冷靜觀察判斷，找出隊伍內的間諜並將他殺掉"
+    - "&f與此同時，也請務必保護好自己，不要被間諜偷襲了"
+    - " "
+    - "&f傳說中在這個世界上，有一把神聖的劍叫做&c&l懲戒之劍&f，只有&e&l天選之人&f才能取得"
+    - "&f而且這把劍可以揭露 &b&l間諜的身分"
+    - "&f不過一旦誤傷他人，將會付出&c&l慘痛的代價"
+    - "&8&m――――――――――――――――――――――――――――――――――――――――――――"
+  Sword_Lore:
+    - "用這把劍，對間諜揮下正義的一刀吧！"
+
+

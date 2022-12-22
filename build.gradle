@@ -1,0 +1,93 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+group = 'me.lulu'
+version = '1.0.0-alpha-2'
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = "UTF-8"
+}
+
+compileJava {
+    sourceCompatibility = 8
+    targetCompatibility = 8
+}
+
+processResources {
+    filesMatching('plugin.yml') {
+        expand 'pluginVersion': project.version
+    }
+}
+
+shadowJar {
+    relocate("org.mineacademy", "org.mcwonderland.uhc.lib.mineacademy")
+    relocate("org.apache", "org.mcwonderland.uhc.lib.apache")
+    classifier = ""
+}
+
+repositories {
+    mavenCentral()
+    flatDir { dir("./libs") }
+
+    maven { url 'https://jitpack.io' }
+
+    maven {
+        name 'm2-dv8tion'
+        url 'https://m2.dv8tion.net/releases'
+    }
+    maven { url 'https://nexus.scarsz.me/content/groups/public/' }
+
+
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
+    maven { url 'https://oss.sonatype.org/content/groups/public/' }
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
+
+    maven {
+        name = "naluwan"
+        url = uri("https://repo.naluwan.net/public-snapshot")
+    }
+}
+
+dependencies {
+    implementation 'org.mineacademy:Foundation:6.0.8'
+    implementation 'com.github.lulu2002:DatouNms:1.2.2'
+
+    compileOnly 'com.discordsrv:discordsrv:1.25.1'
+
+    compileOnly name: 'PacketListenerAPI_v3.7.9-SNAPSHOT'
+
+    compileOnly name: 'custom-ore-generator-2022.06.11'
+    compileOnly 'com.github.Brettflan:WorldBorder:44f388f3ba'
+
+    compileOnly 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+
+    implementation 'commons-lang:commons-lang:2.6'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.spigotmc:spigot-api:1.16.5-R0.1-SNAPSHOT'
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.16:1.5.2'
+
+    testImplementation 'junit:junit:4.13'
+}
+
+test {
+    useJUnit()
+
+    maxHeapSize = '1G'
+}
+
+configurations {
+    testCompile.extendsFrom compileOnly
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.forkOptions.jvmArgs.addAll(['--add-opens', 'jdk.compiler/com.sun.tools.javac.code=ALL-UNNAMED'])
+}
