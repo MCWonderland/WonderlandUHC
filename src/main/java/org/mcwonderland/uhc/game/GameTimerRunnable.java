@@ -2,6 +2,8 @@ package org.mcwonderland.uhc.game;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
+import org.bukkit.Bukkit;
+import org.mcwonderland.uhc.events.UHCGameTimerUpdateEvent;
 import org.mcwonderland.uhc.game.timer.Timer;
 import org.mineacademy.fo.Common;
 
@@ -23,6 +25,7 @@ public class GameTimerRunnable implements Runnable {
         if (tick > 19) {
             totalSecond++;
             tick = 0;
+            Bukkit.getPluginManager().callEvent(new UHCGameTimerUpdateEvent(totalSecond));
         }
 
         for (Timer timer : Game.getGame().getCurrentState().getTimers()) {

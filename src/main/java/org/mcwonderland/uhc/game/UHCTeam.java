@@ -47,7 +47,7 @@ public class UHCTeam {
     private String name;
     private String symbol = "";
     private String chatFormat = "";
-    //todo 這東西不該寫在這
+    // todo 這東西不該寫在這
     private Inventory backpack;
 
     public static Set<UHCTeam> getTeams() {

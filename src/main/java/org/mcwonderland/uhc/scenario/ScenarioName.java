@@ -26,6 +26,7 @@ public enum ScenarioName {
     LESS_BOW_DAMAGE,
     LIMITATIONS,
     LUCKY_LEAVES,
+    MOLE,
     NO_CLEAN,
     NO_ENCHANT,
     NO_FALL,

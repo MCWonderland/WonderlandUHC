@@ -3,12 +3,10 @@ package org.mcwonderland.uhc.scenario;
 import com.google.common.collect.Lists;
 import org.mcwonderland.uhc.api.Scenario;
 import org.mcwonderland.uhc.scenario.impl.block.*;
-import org.mcwonderland.uhc.scenario.impl.block.*;
 import org.mcwonderland.uhc.scenario.impl.consume.ScenarioAbsorptionLess;
 import org.mcwonderland.uhc.scenario.impl.consume.ScenarioFoodNeophobia;
 import org.mcwonderland.uhc.scenario.impl.consume.ScenarioPotionLess;
 import org.mcwonderland.uhc.scenario.impl.consume.ScenarioSoup;
-import org.mcwonderland.uhc.scenario.impl.damage.*;
 import org.mcwonderland.uhc.scenario.impl.damage.*;
 import org.mcwonderland.uhc.scenario.impl.death.ScenarioNoClean;
 import org.mcwonderland.uhc.scenario.impl.death.ScenarioShiftKill;
@@ -22,7 +20,7 @@ import org.mcwonderland.uhc.scenario.impl.rush.ScenarioCutClean;
 import org.mcwonderland.uhc.scenario.impl.rush.ScenarioFastSmelting;
 import org.mcwonderland.uhc.scenario.impl.rush.ScenarioHastyBoys;
 import org.mcwonderland.uhc.scenario.impl.special.*;
-import org.mcwonderland.uhc.scenario.impl.special.*;
+import org.mcwonderland.uhc.scenario.impl.special.mole.ScenarioMole;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -94,6 +92,7 @@ public class ScenarioManager {
                 new ScenarioLessBowDamage(ScenarioName.LESS_BOW_DAMAGE),
                 new ScenarioLimitations(ScenarioName.LIMITATIONS),
                 new ScenarioLuckyLeaves(ScenarioName.LUCKY_LEAVES),
+                new ScenarioMole(ScenarioName.MOLE),
                 new ScenarioNoClean(ScenarioName.NO_CLEAN),
                 new ScenarioNoEnchant(ScenarioName.NO_ENCHANT),
                 new ScenarioNoFall(ScenarioName.NO_FALL),

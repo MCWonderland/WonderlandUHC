@@ -2,6 +2,8 @@ package org.mcwonderland.uhc.game.state.playing.listener.death;
 
 import me.lulu.datounms.DaTouNMS;
 import org.mcwonderland.uhc.UHCPermission;
+import org.mcwonderland.uhc.WonderlandUHC;
+import org.mcwonderland.uhc.api.Scenario;
 import org.mcwonderland.uhc.events.UHCGamingDeathEvent;
 import org.mcwonderland.uhc.game.CombatRelog;
 import org.mcwonderland.uhc.game.Game;
@@ -9,6 +11,7 @@ import org.mcwonderland.uhc.game.GameManager;
 import org.mcwonderland.uhc.game.player.DeathPlayer;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.model.InventoryContent;
+import org.mcwonderland.uhc.scenario.ScenarioName;
 import org.mcwonderland.uhc.settings.Messages;
 import org.mcwonderland.uhc.settings.Settings;
 import org.mcwonderland.uhc.util.Chat;
@@ -118,7 +121,12 @@ public class PlayingDeathListener implements Listener {
     public void removeGaming(UHCGamingDeathEvent e) {
         removeRelogCaches(e.getEntity());
 
-        GameManager.checkWin();
+        Scenario mole = WonderlandUHC.getInstance().getScenarioManager().getScenario(ScenarioName.MOLE);
+        if (mole.isEnabled()){
+            GameManager.checkMoleWin();
+        } else {
+            GameManager.checkWin();
+        }
     }
 
     private void removeRelogCaches(LivingEntity entity) {

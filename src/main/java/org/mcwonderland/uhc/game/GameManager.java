@@ -1,24 +1,27 @@
 package org.mcwonderland.uhc.game;
 
+import org.bukkit.World;
+import org.bukkit.block.Block;
+import org.bukkit.entity.Player;
 import org.mcwonderland.uhc.WonderlandUHC;
 import org.mcwonderland.uhc.api.event.timer.GameEndEvent;
 import org.mcwonderland.uhc.game.player.UHCPlayer;
 import org.mcwonderland.uhc.game.player.UHCPlayers;
 import org.mcwonderland.uhc.game.settings.CacheSaver;
 import org.mcwonderland.uhc.model.freeze.FreezeMode;
+import org.mcwonderland.uhc.scenario.impl.special.mole.ScenarioMole;
 import org.mcwonderland.uhc.settings.Messages;
 import org.mcwonderland.uhc.settings.Settings;
 import org.mcwonderland.uhc.settings.Sounds;
 import org.mcwonderland.uhc.util.Chat;
 import org.mcwonderland.uhc.util.Extra;
-import org.bukkit.World;
-import org.bukkit.block.Block;
-import org.bukkit.entity.Player;
 import org.mineacademy.fo.Common;
 import org.mineacademy.fo.model.SimpleReplacer;
 import org.mineacademy.fo.remain.CompMaterial;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class GameManager {
 
@@ -65,12 +68,65 @@ public class GameManager {
         if (team == null)
             return;
 
-
         broadcastWinning(team);
         Common.callEvent(new GameEndEvent());
 
         if (!WonderlandUHC.TEST_MODE)
             CacheSaver.deleteCache();
+    }
+
+    public static void checkMoleWin() {
+        UHCTeam winnerTeam = getWinner();
+
+        Set<UHCPlayer> molePlayers = ScenarioMole.getMoleList();
+
+        HashSet<UHCPlayer> players = new HashSet<>();
+
+        for (UHCTeam team : UHCTeam.getAliveTeams()) {
+            players.addAll(team.getAlives());
+        }
+        if (molePlayers.containsAll(players)) {
+            broadcastMoleWinning();
+            Common.callEvent(new GameEndEvent());
+        } else if (UHCTeam.getAliveTeams().size() == 1 && !players.contains(molePlayers)) {
+            broadcastWinning(winnerTeam);
+            Common.callEvent(new GameEndEvent());
+        }
+    }
+
+    private static void broadcastMoleWinning() {
+        List<String> winningMsg = getMoleWinningMsg();
+
+        Chat.broadcast(winningMsg.toArray(new String[0]));
+        Extra.sound(Sounds.Game.WIN);
+    }
+
+    private static List<String> getMoleWinningMsg() {
+        int moleKills = 0;
+
+        for (UHCPlayer player : ScenarioMole.getMoleList()) {
+            moleKills += player.getKills();
+        }
+
+        SimpleReplacer simpleReplacer = new SimpleReplacer(Messages.Game.VICTORY_BROADCAST)
+                .replace("{winner}", ScenarioMole.getMoleTeamName())
+                .replace("{kills}", "" + moleKills)
+                .replace("{host}", Game.getGame().getHost());
+
+        List<String> list = simpleReplacer.buildList();
+
+        //todo 優化code
+        for (int i = 0; i < list.size(); i++) {
+            String s = list.get(i);
+            if (s.contains("{players}")) {
+                list.remove(s);
+                for (String name : ScenarioMole.getMoleNames()) {
+                    list.add(i, s.replace("{players}", name));
+                }
+            }
+        }
+
+        return list;
     }
 
     private static void broadcastWinning(UHCTeam winner) {
@@ -95,7 +151,8 @@ public class GameManager {
             if (s.contains("{players}")) {
                 list.remove(s);
                 for (String name : UHCPlayers.toNames(winner.getPlayers())) {
-                    list.add(i, s.replace("{players}", name));
+                    if (!ScenarioMole.getMoleNames().contains(name))
+                        list.add(i, s.replace("{players}", name));
                 }
             }
         }

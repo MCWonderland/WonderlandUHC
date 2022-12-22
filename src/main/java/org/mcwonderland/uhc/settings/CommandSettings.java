@@ -128,4 +128,11 @@ public class CommandSettings extends AutoLoadStaticConfig {
     public static class TeamList {
         public static List<String> MESSAGES;
     }
+
+    public static class Mole {
+        public static String SCS;
+        public static String KIT_RECEIVED;
+        public static String KIT_TWICE;
+        public static List<String> LIST;
+    }
 }
